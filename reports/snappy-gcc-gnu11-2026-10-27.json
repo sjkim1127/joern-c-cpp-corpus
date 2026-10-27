@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "interpretation": "output counts are diagnostic and include headers; not CFG correctness or project function counts",
+  "cases": [
+    {
+      "id": "snappy-raw-snappy.cc-gnu++11",
+      "source_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_sha256": "07dc14fc2c977470d3e43a3fa4718466eb6ed1cd7d5fea4251223631fb63153b",
+      "language": "cpp",
+      "standard": "gnu++11",
+      "standard_origin": "explicit local CMake configuration; not original corpus build",
+      "compiler_sha256": "f8eebc8125101500859e8171ac00758e62c0050320083d22f4f736a384986bf7",
+      "compiler_version": "aarch64-linux-musl-g++ (GCC) 14.2.0",
+      "compilation_database_sha256": "16977ad5126b25da44bc8ff31a10ae5b5ac5151549422d64ddcbb846a834ddfa",
+      "generated_header_sha256": {
+        "config.h": "7ca09cac37530ff4043a9c3201b1dec4a2c5f94b5b3cd3cb10e8ac6f7ea51f50",
+        "snappy-stubs-public.h": "e457170bee6cb777ca3d9c80baabb467ca0b2c85e6439b4baa79a7c85f50a18a"
+      },
+      "target": "aarch64-linux-musl",
+      "prepared_sha256": "d32de56d4b8e315ff7d7010db2c5eb55a5c2a88c0083d8df25238923ba194ace",
+      "prepared_size": 2075380,
+      "status": "prepared",
+      "native_status": "backend_error",
+      "native_function_count": null,
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "original_status": "captured",
+      "original_generator": "pyjoern 4.0.150.4 / Joern v4.0.150",
+      "original_function_count": 5612,
+      "original_reference_sha256": "2476c9c9fb173dd8af613d606883c2b339b256188e1924f2124861d5b532d0dd"
+    },
+    {
+      "id": "snappy-raw-snappy-sinksource.cc-gnu++11",
+      "source_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_sha256": "52c609f0fa9bea1dbb5dd1151b2536ee849b3e1e7fdb1380de8b08c4c74b748f",
+      "language": "cpp",
+      "standard": "gnu++11",
+      "standard_origin": "explicit local CMake configuration; not original corpus build",
+      "compiler_sha256": "f8eebc8125101500859e8171ac00758e62c0050320083d22f4f736a384986bf7",
+      "compiler_version": "aarch64-linux-musl-g++ (GCC) 14.2.0",
+      "compilation_database_sha256": "16977ad5126b25da44bc8ff31a10ae5b5ac5151549422d64ddcbb846a834ddfa",
+      "generated_header_sha256": {
+        "config.h": "7ca09cac37530ff4043a9c3201b1dec4a2c5f94b5b3cd3cb10e8ac6f7ea51f50",
+        "snappy-stubs-public.h": "e457170bee6cb777ca3d9c80baabb467ca0b2c85e6439b4baa79a7c85f50a18a"
+      },
+      "target": "aarch64-linux-musl",
+      "prepared_sha256": "7fd6e23fe75250360a41a8ba935f8df9a6a6cd6d40b29b05fb31febd9317009a",
+      "prepared_size": 14687,
+      "status": "prepared",
+      "native_status": "backend_error",
+      "native_function_count": null,
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "original_status": "captured",
+      "original_generator": "pyjoern 4.0.150.4 / Joern v4.0.150",
+      "original_function_count": 77,
+      "original_reference_sha256": "caade9900e18a57cc82aa575c58ec5f7d2c6a9969f43e2ca793198985f08336e"
+    }
+  ]
+}

@@ -21,6 +21,8 @@ def main():
     p.add_argument('--checkout',type=Path,required=True)
     p.add_argument('--compiler',type=Path,required=True)
     p.add_argument('--standard',choices=['c++17','c++20','c++23'],action='append',required=True)
+    p.add_argument('--output-dir',type=Path,default=ROOT/'workspace/prepared-ninja')
+    p.add_argument('--preserve-linemarkers',action='store_true')
     args=p.parse_args(); checkout=args.checkout.resolve(); compiler=args.compiler.resolve()
     def git(*args): return subprocess.check_output(['git','-C',str(checkout),*args],text=True).strip()
     if git('rev-parse','HEAD')!=REV or git('status','--porcelain','--untracked-files=all'):
@@ -28,12 +30,12 @@ def main():
     compiler_version=subprocess.check_output([str(compiler),'--version'],text=True).splitlines()[0]
     target=subprocess.check_output([str(compiler),'-dumpmachine'],text=True).strip()
     entries=[e for e in json.loads((ROOT/'manifests/inputs.json').read_text())['entries'] if e['project']=='ninja' and e['input_kind']=='raw_source']
-    output=ROOT/'workspace/prepared-ninja'; output.mkdir(parents=True,exist_ok=True)
+    output=args.output_dir.resolve(); output.mkdir(parents=True,exist_ok=True)
     rows=[]
     for standard in dict.fromkeys(args.standard):
         for entry in entries:
             source=checkout/entry['source_path']; dest=output/f"{entry['id']}-{standard}.ii"
-            row={'id':f"{entry['id']}-{standard}",'source_id':entry['id'],'source_revision':REV,'source_sha256':sha(source),'language':'cpp','standard':standard,'standard_origin':'explicit experimental mode; not original project build', 'compiler_path':str(compiler),'compiler_sha256':sha(compiler),'compiler_version':compiler_version,'target':target,'platform':platform.platform(),'flags':['-std='+standard,'-I',str(checkout)],'preprocess_flags':['-E','-P'],'syntax_flags':['-fsyntax-only'], 'prepared_source':str(dest)}
+            row={'id':f"{entry['id']}-{standard}",'source_id':entry['id'],'source_revision':REV,'source_sha256':sha(source),'language':'cpp','standard':standard,'standard_origin':'explicit experimental mode; not original project build', 'compiler_path':str(compiler),'compiler_sha256':sha(compiler),'compiler_version':compiler_version,'target':target,'platform':platform.platform(),'flags':['-std='+standard,'-I',str(checkout)],'preprocess_flags':(['-E'] if args.preserve_linemarkers else ['-E','-P']),'syntax_flags':['-fsyntax-only'], 'prepared_source':str(dest)}
             if row['source_sha256']!=entry['sha256']:
                 row.update(status='source_hash_mismatch'); rows.append(row); continue
             flags=row['flags']
@@ -41,7 +43,7 @@ def main():
             row['syntax_returncode']=syntax.returncode; row['syntax_stderr']=syntax.stderr[-3000:]
             if syntax.returncode:
                 row['status']='compiler_rejected'; rows.append(row); continue
-            prep=subprocess.run([str(compiler),*flags,'-E','-P',str(source)],capture_output=True)
+            prep=subprocess.run([str(compiler),*flags,*row['preprocess_flags'],str(source)],capture_output=True)
             if prep.returncode:
                 row.update(status='preprocess_error',preprocess_stderr=prep.stderr.decode(errors='replace')[-3000:]); rows.append(row); continue
             dest.write_bytes(prep.stdout); row.update(status='prepared',prepared_sha256=sha(dest),prepared_size=len(prep.stdout)); rows.append(row)

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "interpretation": "output counts are diagnostic and include headers; not CFG correctness or project function counts",
+  "cases": [
+    {
+      "id": "snappy-raw-snappy.cc-gnu++11",
+      "source_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_sha256": "07dc14fc2c977470d3e43a3fa4718466eb6ed1cd7d5fea4251223631fb63153b",
+      "language": "cpp",
+      "standard": "gnu++11",
+      "standard_origin": "explicit local CMake configuration; not original corpus build",
+      "compiler_sha256": "305697d3868243dca6e4aabf4f628df7de135d701eb4fd78f6a5d7528fef4395",
+      "compiler_version": "Homebrew clang version 22.1.8",
+      "compilation_database_sha256": "5c50265cafa7fbd6c173fb365bcf5691d874524e679057338582c0736b287eb3",
+      "generated_header_sha256": {
+        "config.h": "dc820bbeebb64c97fdd8f46ce83654c7886dd6a5c26339623336bb38f28ed91a",
+        "snappy-stubs-public.h": "e457170bee6cb777ca3d9c80baabb467ca0b2c85e6439b4baa79a7c85f50a18a"
+      },
+      "target": "arm64-apple-darwin25.5.0",
+      "prepared_sha256": "a8bbe3a7c73b3b4e7357feb7ef48227035be302a470232bb514ebc6ade852355",
+      "prepared_size": 3235630,
+      "status": "prepared",
+      "native_status": "backend_error",
+      "native_function_count": null,
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "original_status": "captured",
+      "original_generator": "pyjoern 4.0.150.4 / Joern v4.0.150",
+      "original_function_count": 4121,
+      "original_reference_sha256": "261ced922d5af0157b84685c0aeb50fee3ffab6fe6f972cbfb73a65515293e43"
+    },
+    {
+      "id": "snappy-raw-snappy-sinksource.cc-gnu++11",
+      "source_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_sha256": "52c609f0fa9bea1dbb5dd1151b2536ee849b3e1e7fdb1380de8b08c4c74b748f",
+      "language": "cpp",
+      "standard": "gnu++11",
+      "standard_origin": "explicit local CMake configuration; not original corpus build",
+      "compiler_sha256": "305697d3868243dca6e4aabf4f628df7de135d701eb4fd78f6a5d7528fef4395",
+      "compiler_version": "Homebrew clang version 22.1.8",
+      "compilation_database_sha256": "5c50265cafa7fbd6c173fb365bcf5691d874524e679057338582c0736b287eb3",
+      "generated_header_sha256": {
+        "config.h": "dc820bbeebb64c97fdd8f46ce83654c7886dd6a5c26339623336bb38f28ed91a",
+        "snappy-stubs-public.h": "e457170bee6cb777ca3d9c80baabb467ca0b2c85e6439b4baa79a7c85f50a18a"
+      },
+      "target": "arm64-apple-darwin25.5.0",
+      "prepared_sha256": "51960ff1da75919e951e80e840b8e7ebf7a95006d84e4026fd530f989600f1c9",
+      "prepared_size": 36111,
+      "status": "prepared",
+      "native_status": "backend_error",
+      "native_function_count": null,
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "original_status": "captured",
+      "original_generator": "pyjoern 4.0.150.4 / Joern v4.0.150",
+      "original_function_count": 76,
+      "original_reference_sha256": "f6f246e6f52cf2f5eff01db74c88d1ff949daee9a547a6b627ff705b0b4fd289"
+    }
+  ]
+}

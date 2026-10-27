@@ -4,9 +4,9 @@ An experimental, reproducible input inventory for evaluating C/C++ source parsin
 
 ## Seed population
 
-`manifests/inputs.json` records 141 real upstream-derived source inputs:
+`manifests/inputs.json` records 143 real upstream-derived source inputs:
 
-* 135 preprocessed C++ translation units from [DecBench C++ raw corpus](https://huggingface.co/datasets/sjkim1127/decbench-cpp-raw-corpus), frozen at `f1b7e849641baf1d35e293f400bc36aa7a1a4e2c`: 99 Ninja, 24 double-conversion and 12 Snappy. Two additional pinned Ninja raw source files support controlled C++17/20/23 preprocessing experiments. The linked dataset's build summary records upstream revisions for Ninja and Snappy; double-conversion's upstream revision remains unverified. These counts are files, not independent functions or binaries. Optimization variants may duplicate source.
+* 135 preprocessed C++ translation units from [DecBench C++ raw corpus](https://huggingface.co/datasets/sjkim1127/decbench-cpp-raw-corpus), frozen at `f1b7e849641baf1d35e293f400bc36aa7a1a4e2c`: 99 Ninja, 24 double-conversion and 12 Snappy. Two additional pinned Ninja raw sources and two pinned Snappy raw sources support controlled C++ standard-mode experiments. The linked dataset's build summary records upstream revisions for Ninja and Snappy; double-conversion's upstream revision remains unverified. These counts are files, not independent functions or binaries. Optimization variants may duplicate source.
 * Four unpreprocessed C source files from [zlib v1.3.1](https://github.com/madler/zlib/tree/51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf), pinned to `51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf`. They require project headers and compiler preprocessing for meaningful full-TU runs; the basic runner passes these raw files directly as diagnostic inputs only; the controlled preprocessing workflow below supplies project context.
 
 The **original** C/C++ standard and exact compiler flags are unknown for every archived row until evidenced by original build commands. The preprocessing experiments below record their own explicitly selected modes; they do not reconstruct the historical builds. A preprocessed `.ii` does not by itself prove the standard or original configuration. These inputs are not balanced across C/C++ versions or projects. Binary-to-TU mappings, complete upstream licensing for the archived C++ files, build context, expected functions, held-out splits and full corpus qualification remain open work. No input-source contents are redistributed in this repository. zlib sources retain their original zlib license; use each upstream project's own license for its files. Do not assume the data inherit the scripts' license.
@@ -44,3 +44,21 @@ python3 scripts/run_prepared.py --manifest workspace/prepared-ninja/manifest.jso
 Preparation rejects dirty or wrong-revision checkouts, verifies source hashes, checks compiler syntax, and saves source, compiler, command and prepared-byte provenance. `-P` deliberately removes line markers: original-file ownership is therefore not established by this experiment. System header contents are captured in the prepared hash, not independently pinned. The two Ninja inputs were selected for a source-level experiment; they are not matched to a specific archived binary.
 
 For unchanged original Joern, use Rust-Joern's `scripts/capture_pyjoern_corpus.py` and the generated `reference-manifest.json`, with an isolated original PyJoern 4.0.150.4 environment. That tool retains per-input timeout/error and prepared hash records. The `scripts/report_prepared.py` helper builds an evidence summary; it checks prepared hash identity but does not compare CFG topology or prove semantics. See [experiment notes](reports/README.md).
+
+## Source ownership and CFG topology
+
+Install `requirements.txt` in the comparison environment. `prepare_zlib.py` and `prepare_ninja.py` accept `--preserve-linemarkers --output-dir PATH`, preserving compiler line markers for source-owned function candidates. `scripts/compare_cfg.py --help` describes the hash-checked per-input comparison; it uses the prepared input, source file, native output and original reference, together with both native-result and preparation manifests. It checks exactly one entry, at least one exit, edge/node integrity, reachability, directed topology and entry/exit roles. Oversized graphs, duplicate edges, unbounded graphs and timeouts are explicitly unqualified. Equal topology does not establish equivalent statements or effects.
+
+This is an **observed candidate** inventory, not a complete function denominator. The original capture format is name-keyed and may collapse duplicate names; it must be replaced with a collision-preserving identity contract before overload-sensitive C++ evaluation. Preprocessor markers identify source provenance only when the complete observed function span maps to the same exact source.
+
+For C++11/14, `scripts/prepare_snappy.py` reads an explicitly selected CMake `compile_commands.json`, checks the pinned clean source revision, verifies source hashes and records compiler, configured standard, database, generated header and prepared-byte hashes. Build configuration is an experiment, not the historical archived corpus build. Example setup:
+
+```sh
+git clone --no-checkout https://github.com/google/snappy.git workspace/snappy-upstream
+git -C workspace/snappy-upstream checkout --detach 2a6c78c781cb76ad191795449cb2267f33138150
+cmake -S workspace/snappy-upstream -B workspace/snappy-build-c11 -DCMAKE_CXX_COMPILER=/path/to/clang++ -DCMAKE_CXX_STANDARD=11 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DSNAPPY_BUILD_TESTS=OFF -DSNAPPY_BUILD_BENCHMARKS=OFF -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+python3 scripts/prepare_snappy.py --checkout workspace/snappy-upstream --database workspace/snappy-build-c11/compile_commands.json --output-dir workspace/snappy-gnu11
+python3 scripts/run_prepared.py --manifest workspace/snappy-gnu11/manifest.json --output-dir workspace/snappy-gnu11-eval --binary /path/to/rust-joern
+```
+
+Repeat with a separate build directory and `-DCMAKE_CXX_STANDARD=14`. For a Linux AArch64 cross-compiler, choose explicit CMake system and compiler settings and keep the resulting target separate from native macOS. See [boundary experiment](reports/CFG-BOUNDARIES.md).

@@ -2386,6 +2386,36 @@
       "standard_evidence": null,
       "input_kind": "raw_source",
       "license": "Apache-2.0"
+    },
+    {
+      "id": "snappy-raw-snappy.cc",
+      "project": "snappy",
+      "upstream_repo": "google/snappy",
+      "upstream_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_path": "snappy.cc",
+      "url": "https://raw.githubusercontent.com/google/snappy/2a6c78c781cb76ad191795449cb2267f33138150/snappy.cc",
+      "sha256": "07dc14fc2c977470d3e43a3fa4718466eb6ed1cd7d5fea4251223631fb63153b",
+      "size_bytes": 107383,
+      "language": "cpp",
+      "standard": "unknown",
+      "standard_evidence": null,
+      "input_kind": "raw_source",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "id": "snappy-raw-snappy-sinksource.cc",
+      "project": "snappy",
+      "upstream_repo": "google/snappy",
+      "upstream_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_path": "snappy-sinksource.cc",
+      "url": "https://raw.githubusercontent.com/google/snappy/2a6c78c781cb76ad191795449cb2267f33138150/snappy-sinksource.cc",
+      "sha256": "52c609f0fa9bea1dbb5dd1151b2536ee849b3e1e7fdb1380de8b08c4c74b748f",
+      "size_bytes": 3748,
+      "language": "cpp",
+      "standard": "unknown",
+      "standard_evidence": null,
+      "input_kind": "raw_source",
+      "license": "BSD-3-Clause"
     }
   ]
 }

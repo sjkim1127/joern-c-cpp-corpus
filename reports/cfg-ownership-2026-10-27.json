@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "profile": "clang-macos",
+      "file": "adler32.c",
+      "prepared_sha256": "e11b17ed2a8c12082680e05e60923924629174ea8582c1bf994532535d58ccfa",
+      "source_sha256": "9cd1443a24ff2a3053961695bd432035c58347386a420d3388232376ebabe211",
+      "native_graph_sha256": "54f91c92b645c408868ceb732e214b508b2f49c0829677dc99f0b3fb5d191e03",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "07eaf51fb6fc15b2b3178ffd30ad6c1a1c7203b5e0da66156c11cfc3200cf185",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "adler32",
+          "source_start": 128,
+          "source_end": 130,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "adler32_combine",
+          "source_start": 158,
+          "source_end": 160,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "adler32_combine64",
+          "source_start": 162,
+          "source_end": 164,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "adler32_combine_",
+          "source_start": 133,
+          "source_end": 155,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "adler32_z",
+          "source_start": 61,
+          "source_end": 125,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        }
+      ]
+    },
+    {
+      "profile": "clang-macos",
+      "file": "crc32.c",
+      "prepared_sha256": "fc75deb1b52a4c9e3fec7713fb98693f00c4504800f234b0e63ff24f5fae26fe",
+      "source_sha256": "8fd16f0a7714d51c89c2eb37eb98ec15e8a4dc57ba343e7b7398b19144039fda",
+      "native_graph_sha256": "024017a8630c8ef6dfb607d4d48b252bd60a77e3656d785f394349dbe68385b8",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "53c976ceed40b4f61c9e251006738b4615d68f0234fb87ba0c3019b3de685041",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "crc32",
+          "source_start": 1015,
+          "source_end": 1018,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine",
+          "source_start": 1029,
+          "source_end": 1031,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine64",
+          "source_start": 1021,
+          "source_end": 1026,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine_gen",
+          "source_start": 1042,
+          "source_end": 1044,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine_gen64",
+          "source_start": 1034,
+          "source_end": 1039,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine_op",
+          "source_start": 1047,
+          "source_end": 1049,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_z",
+          "source_start": 575,
+          "source_end": 665,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "get_crc_table",
+          "source_start": 549,
+          "source_end": 554,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "multmodp",
+          "source_start": 155,
+          "source_end": 170,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "x2nmodp",
+          "source_start": 176,
+          "source_end": 187,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "clang-macos",
+      "file": "compress.c",
+      "prepared_sha256": "61d0672bd3f61b2facb2405c862e0688fdbf9c7de59916dc47ccb892832aa9a6",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "native_graph_sha256": "933793f67ffa91da67ad2b77b1a0fe625edc044772f6a68c7dadbecd7aad5689",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "ac46b55993da06df21beff489b6cdea32fc4f1ae77407c26904eda66316d5a7f",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "clang-macos",
+      "file": "uncompr.c",
+      "prepared_sha256": "ab15664e91a10d298e3ef5ed11137d3064e41329de21b673cf1b2cf0e3b8cdb0",
+      "source_sha256": "04dca5e31b3b8a17d1806426f66f0c539f4184d657e149d40be07070c6227b52",
+      "native_graph_sha256": "963425ea0cb04109033e68e623b5582db1ccc02d6ea21c917dd94107c1e7199a",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "9a78946a91dd8f3fcac3c0fd7b4a91bbf70aed62e499fa0887fe0da7fd91c72d",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "uncompress",
+          "source_start": 82,
+          "source_end": 85,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "uncompress2",
+          "source_start": 27,
+          "source_end": 80,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        }
+      ]
+    },
+    {
+      "profile": "gcc-linux-aarch64",
+      "file": "adler32.c",
+      "prepared_sha256": "3421a41ecbec2d64975ec9dac8a06f3c0451217ce8993fc480a1db83a45df5f5",
+      "source_sha256": "9cd1443a24ff2a3053961695bd432035c58347386a420d3388232376ebabe211",
+      "native_graph_sha256": "041f88afc2000828800e3481f227af559a0d71faf98140575fad62d1d7a6e9d6",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "ba8a2c95cc4d2c4f0041a4747cf5f55c9889e6524e5e0706694dc95efb707d51",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "adler32",
+          "source_start": 128,
+          "source_end": 130,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "adler32_combine",
+          "source_start": 158,
+          "source_end": 160,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "adler32_combine64",
+          "source_start": 162,
+          "source_end": 164,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "adler32_combine_",
+          "source_start": 133,
+          "source_end": 155,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "adler32_z",
+          "source_start": 61,
+          "source_end": 125,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        }
+      ]
+    },
+    {
+      "profile": "gcc-linux-aarch64",
+      "file": "crc32.c",
+      "prepared_sha256": "18bb9b431dd15f1eaa923f8bf3a03f4058c9957a93511e50dd44059417e6491c",
+      "source_sha256": "8fd16f0a7714d51c89c2eb37eb98ec15e8a4dc57ba343e7b7398b19144039fda",
+      "native_graph_sha256": "ba9b3be9d3a29167bcde53c6c6e27f36e2487a00f4d54bd33c23873d9be767cc",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "a4ac61b06b54f7c6c09da289b032de2486de974efceb5fea1b437b4e940e3ab4",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "byte_swap",
+          "source_start": 113,
+          "source_end": 131,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32",
+          "source_start": 1015,
+          "source_end": 1018,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine",
+          "source_start": 1029,
+          "source_end": 1031,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine64",
+          "source_start": 1021,
+          "source_end": 1026,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine_gen",
+          "source_start": 1042,
+          "source_end": 1044,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine_gen64",
+          "source_start": 1034,
+          "source_end": 1039,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_combine_op",
+          "source_start": 1047,
+          "source_end": 1049,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc32_z",
+          "source_start": 694,
+          "source_end": 1010,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "crc_word",
+          "source_start": 676,
+          "source_end": 681,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "crc_word_big",
+          "source_start": 683,
+          "source_end": 689,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "get_crc_table",
+          "source_start": 549,
+          "source_end": 554,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "multmodp",
+          "source_start": 155,
+          "source_end": 170,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "x2nmodp",
+          "source_start": 176,
+          "source_end": 187,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "gcc-linux-aarch64",
+      "file": "compress.c",
+      "prepared_sha256": "c76a52ff7f2c5a2ec3a4c1538e9fcfee92da0544ec1164d54e5fea399755461d",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "native_graph_sha256": "330eb7dc3d72dc4874b30a7c5b85f14c05454b81e3f71288ad61d99414e3c2ac",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "ecc0008c348fb3234108fffb66be1c9a29d202d931891ff3e4843bf7a0ae0fc5",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "gcc-linux-aarch64",
+      "file": "uncompr.c",
+      "prepared_sha256": "58651007e98f13d5131dde417d8624f8068b7b4af7918aee6bb895e85a9e00f7",
+      "source_sha256": "04dca5e31b3b8a17d1806426f66f0c539f4184d657e149d40be07070c6227b52",
+      "native_graph_sha256": "9f33c7efded0324a144979f3d138ff322ee15c6bbb34c7bb5912b45ad5f68d16",
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "reference_sha256": "ed6b0a13b4861d109dba11840dbe9e51aeadc0e0918d76247b058519ef6cf9d4",
+      "scope": "observed source-owned candidates; not complete expected-function denominator",
+      "reference_identity_limit": "name-keyed capture may collapse duplicate names",
+      "rows": [
+        {
+          "name": "uncompress",
+          "source_start": 82,
+          "source_end": 85,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "uncompress2",
+          "source_start": 27,
+          "source_end": 80,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        }
+      ]
+    }
+  ]
+}
