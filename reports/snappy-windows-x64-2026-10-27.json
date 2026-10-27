@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "interpretation": "output counts are diagnostic and include headers; not CFG correctness or project function counts",
+  "cases": [
+    {
+      "id": "snappy-raw-snappy.cc-gnu++11",
+      "source_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_sha256": "07dc14fc2c977470d3e43a3fa4718466eb6ed1cd7d5fea4251223631fb63153b",
+      "language": "cpp",
+      "standard": "gnu++11",
+      "standard_origin": "explicit local CMake configuration; not original corpus build",
+      "compiler_sha256": "df54779c00e9f04d78cad01e696140d6281d2805c4286aebe61d99e21782ce0a",
+      "compiler_version": "x86_64-w64-mingw32-g++ (GCC) 15.2.0",
+      "compilation_database_sha256": "003b322102e942741a503ccf61ba24b8e0d908d377373f337ca5af2d6dab88f2",
+      "response_file_sha256": {
+        "CMakeFiles/snappy.dir/includes_CXX.rsp": "1e849320c01489cf75df7017272467366d42eee0976fb2f1a6408f3cb5db7ab6"
+      },
+      "generated_header_sha256": {
+        "config.h": "c7c50efff993ca1ee6dc21ca06859edcee36ea80a811c545f5adb8bd7e37b248",
+        "snappy-stubs-public.h": "b29229aa2aef9ebdfa0f50ba3a1eff5616cde44472042bb2fee4da70dbe64e7f"
+      },
+      "object_sha256": "11de8c6c0bbd75b5ca9de0939cc7149e6bec72c7b1e596b4d078da33ea37bef0",
+      "object_identity": {
+        "format": "COFF",
+        "architecture": "x86_64",
+        "machine": 34404
+      },
+      "object_expected": {
+        "format": "COFF",
+        "architecture": "x86_64"
+      },
+      "target": "x86_64-w64-mingw32",
+      "prepared_sha256": "8d5fe154aca5693eb20220f0ae857a785446fe24516df1fbfbf9e569d4557f5a",
+      "prepared_size": 1388864,
+      "status": "prepared",
+      "native_status": "backend_error",
+      "native_function_count": null,
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "original_status": "captured",
+      "original_generator": "pyjoern 4.0.150.4 / Joern v4.0.150",
+      "original_function_count": 2358,
+      "original_reference_sha256": "019a5e76fed76258fde93342c00c615545b2551e4695143835a6e498f24455d2"
+    },
+    {
+      "id": "snappy-raw-snappy-sinksource.cc-gnu++11",
+      "source_revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+      "source_sha256": "52c609f0fa9bea1dbb5dd1151b2536ee849b3e1e7fdb1380de8b08c4c74b748f",
+      "language": "cpp",
+      "standard": "gnu++11",
+      "standard_origin": "explicit local CMake configuration; not original corpus build",
+      "compiler_sha256": "df54779c00e9f04d78cad01e696140d6281d2805c4286aebe61d99e21782ce0a",
+      "compiler_version": "x86_64-w64-mingw32-g++ (GCC) 15.2.0",
+      "compilation_database_sha256": "003b322102e942741a503ccf61ba24b8e0d908d377373f337ca5af2d6dab88f2",
+      "response_file_sha256": {
+        "CMakeFiles/snappy.dir/includes_CXX.rsp": "1e849320c01489cf75df7017272467366d42eee0976fb2f1a6408f3cb5db7ab6"
+      },
+      "generated_header_sha256": {
+        "config.h": "c7c50efff993ca1ee6dc21ca06859edcee36ea80a811c545f5adb8bd7e37b248",
+        "snappy-stubs-public.h": "b29229aa2aef9ebdfa0f50ba3a1eff5616cde44472042bb2fee4da70dbe64e7f"
+      },
+      "object_sha256": "eac625c558d4333ca3f92a00a291626d6ce5a36ec123ec56d6a718e716e3ee3c",
+      "object_identity": {
+        "format": "COFF",
+        "architecture": "x86_64",
+        "machine": 34404
+      },
+      "object_expected": {
+        "format": "COFF",
+        "architecture": "x86_64"
+      },
+      "target": "x86_64-w64-mingw32",
+      "prepared_sha256": "bfd4c26e05a8eea005e07066fad6f3a0a089a5f0f765aaf21423e6a8540010a4",
+      "prepared_size": 41745,
+      "status": "prepared",
+      "native_status": "backend_error",
+      "native_function_count": null,
+      "native_backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "original_status": "captured",
+      "original_generator": "pyjoern 4.0.150.4 / Joern v4.0.150",
+      "original_function_count": 182,
+      "original_reference_sha256": "1c291cc96ad69ee37e5fa3e2e6e2a919c5a397280d4ae635366c9e628092bf02"
+    }
+  ]
+}

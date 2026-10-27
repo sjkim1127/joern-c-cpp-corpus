@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "scope": "one source TU, per-profile separate input, cross-compiled objects, not runtime validation",
+  "cases": [
+    {
+      "profile": "macos-arm64",
+      "target_triple": "arm64-apple-darwin25.5.0",
+      "compiler_version": "Homebrew clang version 22.1.8",
+      "compiler_sha256": "305697d3868243dca6e4aabf4f628df7de135d701eb4fd78f6a5d7528fef4395",
+      "standard": "c11",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "prepared_sha256": "61d0672bd3f61b2facb2405c862e0688fdbf9c7de59916dc47ccb892832aa9a6",
+      "object_sha256": "04b73a16fe6274974d4a725c9879c2d305e4854e8f8ed35be26627634ab98ac6",
+      "object_identity": {
+        "format": "Mach-O",
+        "architecture": "aarch64",
+        "machine": 16777228
+      },
+      "backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "native_graph_sha256": "7828e5d4abc404e4cee394c349c21667a8b239b72d40194bcb6c07e7ea255d30",
+      "reference_sha256": "543e8bdabf17e081e34dcdaff6ed1192baf7b0e8b5b7c933d6398019cceb8653",
+      "native_status": "output",
+      "cfg_status_counts": {
+        "isomorphic": 2,
+        "unqualified": 1
+      },
+      "comparison_rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "macos-x64",
+      "target_triple": "x86_64-apple-macos13",
+      "compiler_version": "Homebrew clang version 22.1.8",
+      "compiler_sha256": "305697d3868243dca6e4aabf4f628df7de135d701eb4fd78f6a5d7528fef4395",
+      "standard": "c11",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "prepared_sha256": "51bede89b161a94696a22432f27600ab4bab9df449878bb3150fe4ba63ef3788",
+      "object_sha256": "0be2d397696a0bd418672aba36f7c2d9fbab84fd087b004dd034a314662827ba",
+      "object_identity": {
+        "format": "Mach-O",
+        "architecture": "x86_64",
+        "machine": 16777223
+      },
+      "backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "native_graph_sha256": "6d56d2d49131ccd11905c6fc92a2704e2de56dc3012f7666ad89ce416abd087f",
+      "reference_sha256": "d234fb9cd4a1d632bd3437d8016ade7cc62e950de8ef5104a5a8a1ea69721a72",
+      "native_status": "output",
+      "cfg_status_counts": {
+        "isomorphic": 2,
+        "unqualified": 1
+      },
+      "comparison_rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "linux-arm64",
+      "target_triple": "aarch64-linux-musl",
+      "compiler_version": "aarch64-linux-musl-gcc (GCC) 14.2.0",
+      "compiler_sha256": "0b1146b08ba1c285931fbe5de0121e3d39dc4f2a827174ded0fe172ffe6254dd",
+      "standard": "c11",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "prepared_sha256": "c76a52ff7f2c5a2ec3a4c1538e9fcfee92da0544ec1164d54e5fea399755461d",
+      "object_sha256": "1a4cdc6569dacdb71cc3cbcc3b22a790d67c1bac7c1f14419472e604278c4447",
+      "object_identity": {
+        "format": "ELF",
+        "architecture": "aarch64",
+        "machine": 183
+      },
+      "backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "native_graph_sha256": "3b19da0aed66f243ed0ea86dccbd93b62f53bfa9152a202a44e3f7b24810ae3b",
+      "reference_sha256": "b4d6a7e29e9f438e800224bbc459cc1266c8c9f7909675e19faab432de327d9e",
+      "native_status": "output",
+      "cfg_status_counts": {
+        "isomorphic": 2,
+        "unqualified": 1
+      },
+      "comparison_rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "linux-x64",
+      "target_triple": "x86_64-linux-musl",
+      "compiler_version": "x86_64-linux-musl-gcc (GCC) 14.2.0",
+      "compiler_sha256": "b36dc26ec4f18d72cd9eb9667dd718baeece2120e94b6142ec8131073b2926cf",
+      "standard": "c11",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "prepared_sha256": "ac54e38d6bacabbd1203cfc0e2119b22a99fc9844ea07f865f358eab79dd41be",
+      "object_sha256": "d13461517df153054acff8e0ed419ec5510f0de9f24b741afde99a951af5e3d7",
+      "object_identity": {
+        "format": "ELF",
+        "architecture": "x86_64",
+        "machine": 62
+      },
+      "backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "native_graph_sha256": "1f9fd0fd126604516e9debc46c29f3173c45f036afee611e745262a222f081a1",
+      "reference_sha256": "fd675bfce9a52131a5bc87b7870a7ec923f2ed9fb0a85af5d1889c118925f5b8",
+      "native_status": "output",
+      "cfg_status_counts": {
+        "isomorphic": 2,
+        "unqualified": 1
+      },
+      "comparison_rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "windows-x86",
+      "target_triple": "i686-w64-mingw32",
+      "compiler_version": "i686-w64-mingw32-gcc (GCC) 15.2.0",
+      "compiler_sha256": "54787375ced85a1a35fef0995a97c4efee1c7080c2901f0fac07786579dac4ff",
+      "standard": "c11",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "prepared_sha256": "d53df229a3ec5e3d1bbda290de0d2331c168f4f3a2332662b244b3586248198b",
+      "object_sha256": "4c10b3f2e35c6214e372258d5b97f19b4eaafd82cbe1ceeb61d0cdd8c0363e7d",
+      "object_identity": {
+        "format": "COFF",
+        "architecture": "x86",
+        "machine": 332
+      },
+      "backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "native_graph_sha256": "4693d532bf292c27f1c03bfe91a4ff71a37a35e366b7880af59dd80d016c1bea",
+      "reference_sha256": "99f6932933769ce87f483fec7defdf24fbc6f32e655649251797005fd1ed2803",
+      "native_status": "output",
+      "cfg_status_counts": {
+        "isomorphic": 2,
+        "unqualified": 1
+      },
+      "comparison_rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    },
+    {
+      "profile": "windows-x64",
+      "target_triple": "x86_64-w64-mingw32",
+      "compiler_version": "x86_64-w64-mingw32-gcc (GCC) 15.2.0",
+      "compiler_sha256": "292682f531626b5e6b062d7172ce760d436ae1a4c7e97ecde5a1090d13c8bf55",
+      "standard": "c11",
+      "source_sha256": "86f802c16a965e7a28737e3730b4e576c5ba40981753967e3e30916f4dc1b4b1",
+      "prepared_sha256": "db5307764dc555874c3e163cc729ffc8cd9c140a8c062e2ab8543635a9003cdb",
+      "object_sha256": "2518231274abee5a89c8d3d226f2b1cb8c52617221f1a9802b3fc998f130c7b4",
+      "object_identity": {
+        "format": "COFF",
+        "architecture": "x86_64",
+        "machine": 34404
+      },
+      "backend_sha256": "01c7c28a6a1957a0563774a19858502bb29795f5562b834a1d346c1ad85d517d",
+      "native_graph_sha256": "4af63c9883966d0fa63229e1d736b3016b1dac51cc33c7ee5144d0a11cab1ef2",
+      "reference_sha256": "84d2e6d4c38c4370c40de4d52080194097468fe98ff86533d23238274758898d",
+      "native_status": "output",
+      "cfg_status_counts": {
+        "isomorphic": 2,
+        "unqualified": 1
+      },
+      "comparison_rows": [
+        {
+          "name": "compress",
+          "source_start": 63,
+          "source_end": 66,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        },
+        {
+          "name": "compress2",
+          "source_start": 22,
+          "source_end": 59,
+          "native_boundary": "missing_entry_or_exit",
+          "reference_boundary": "missing_entry_or_exit",
+          "status": "unqualified"
+        },
+        {
+          "name": "compressBound",
+          "source_start": 72,
+          "source_end": 75,
+          "native_boundary": "bounded",
+          "reference_boundary": "bounded",
+          "status": "isomorphic"
+        }
+      ]
+    }
+  ]
+}

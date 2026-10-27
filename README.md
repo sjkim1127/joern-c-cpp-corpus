@@ -62,3 +62,13 @@ python3 scripts/run_prepared.py --manifest workspace/snappy-gnu11/manifest.json 
 ```
 
 Repeat with a separate build directory and `-DCMAKE_CXX_STANDARD=14`. For a Linux AArch64 cross-compiler, choose explicit CMake system and compiler settings and keep the resulting target separate from native macOS. See [boundary experiment](reports/CFG-BOUNDARIES.md).
+
+## OS and architecture profiles
+
+The initial profile runs include macOS arm64/x86-64, Linux AArch64/x86-64 and Windows x86/x86-64. They compile a real Zlib TU to a relocatable object, check its machine/format and compare source CFGs per profile; see [platform experiment](reports/PLATFORM-MATRIX.md). Example:
+
+```sh
+python3 scripts/prepare_zlib.py --checkout workspace/zlib-upstream --compiler /path/to/x86_64-w64-mingw32-gcc --standard c11 --source compress.c --preserve-linemarkers --verify-object --expected-format COFF --expected-arch x86_64 --output-dir workspace/matrix-windows-x64
+```
+
+`--compiler-target` and `--sysroot` support an explicit Clang target and SDK. `prepare_snappy.py` supports the same object verification options and expands bounded CMake response files while recording their hashes. A successful cross-compilation is not a native-OS execution test.

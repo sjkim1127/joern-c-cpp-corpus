@@ -14,7 +14,7 @@ def main():
     args=p.parse_args(); prepared=json.loads(args.manifest.read_text()); native=json.loads((args.results_dir/'native-results.json').read_text())
     by_id={r['id']:r for r in native['results']}; rows=[]
     for case in prepared['cases']:
-        n=by_id[case['id']]; row={k:case.get(k) for k in ('id','source_revision','source_sha256','language','standard','standard_origin','compiler_sha256','compiler_version','compilation_database_sha256','generated_header_sha256','target','prepared_sha256','prepared_size','status')}
+        n=by_id[case['id']]; row={k:case.get(k) for k in ('id','source_revision','source_sha256','language','standard','standard_origin','compiler_sha256','compiler_version','compilation_database_sha256','response_file_sha256','generated_header_sha256','object_sha256','object_identity','object_expected','target','prepared_sha256','prepared_size','status')}
         row.update(native_status=n['status'],native_function_count=n.get('function_count'),native_backend_sha256=n['backend_sha256'])
         ref=args.results_dir/'references'/f"{case['id']}.json"
         if ref.is_file():
