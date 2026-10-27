@@ -17,7 +17,7 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def fetch(entry):
-    suffix = '.ii' if entry['input_kind'] == 'preprocessed_tu' else '.c'
+    suffix = '.ii' if entry['input_kind'] == 'preprocessed_tu' else ('.cc' if entry['language'] == 'cpp' else '.c')
     path = WORK / 'inputs' / (entry['id'] + suffix)
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists() and valid(path.read_bytes(), entry):
@@ -68,7 +68,7 @@ def main():
         record={'id':e['id'],'project':e['project'],'language':e['language'],'standard':e['standard'],'input_kind':e['input_kind'],'backend_sha256':binary_hash,'timeout_seconds':args.timeout,'entry_sha256':hashlib.sha256(json.dumps(e,sort_keys=True).encode()).hexdigest()}
         if result.exists() and not args.no_resume and binary:
             old=json.loads(result.read_text())
-            if all(old.get(k)==record.get(k) for k in ('id','backend_sha256','timeout_seconds','input_kind','entry_sha256')) and old.get('status')!='fetch_error' and (old.get('status') != 'output' or ((WORK/'graphs'/f"{e['id']}.json").is_file() and digest(WORK/'graphs'/f"{e['id']}.json") == old.get('graph_sha256'))):
+            if all(old.get(k)==record.get(k) for k in ('id','backend_sha256','timeout_seconds','input_kind','entry_sha256')) and old.get('status')!='fetch_error' and (old.get('status') not in ('output','no_functions') or ((WORK/'graphs'/f"{e['id']}.json").is_file() and digest(WORK/'graphs'/f"{e['id']}.json") == old.get('graph_sha256'))):
                 print(e['id'],old['status'],'(cached)',flush=True); continue
         try:
             path=fetch(e); record['input_sha256']=digest(path)

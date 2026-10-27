@@ -2356,6 +2356,36 @@
       "standard_evidence": null,
       "input_kind": "raw_source",
       "license": "Zlib"
+    },
+    {
+      "id": "ninja-raw-src-version.cc",
+      "project": "ninja",
+      "upstream_repo": "ninja-build/ninja",
+      "upstream_revision": "e4a128055f7698522da6de2821ffe0761623f298",
+      "source_path": "src/version.cc",
+      "url": "https://raw.githubusercontent.com/ninja-build/ninja/e4a128055f7698522da6de2821ffe0761623f298/src/version.cc",
+      "sha256": "e341bf2d48b08887e353b22a067bc3ebf4ef38838f508df13a9007ab35f039ed",
+      "size_bytes": 1788,
+      "language": "cpp",
+      "standard": "unknown",
+      "standard_evidence": null,
+      "input_kind": "raw_source",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "ninja-raw-src-string_piece_util.cc",
+      "project": "ninja",
+      "upstream_repo": "ninja-build/ninja",
+      "upstream_revision": "e4a128055f7698522da6de2821ffe0761623f298",
+      "source_path": "src/string_piece_util.cc",
+      "url": "https://raw.githubusercontent.com/ninja-build/ninja/e4a128055f7698522da6de2821ffe0761623f298/src/string_piece_util.cc",
+      "sha256": "d6b92dbcf57c75ed5a3d8810ca4d4fec70448da83b3eefb9bfe6dab38e6ef94b",
+      "size_bytes": 2255,
+      "language": "cpp",
+      "standard": "unknown",
+      "standard_evidence": null,
+      "input_kind": "raw_source",
+      "license": "Apache-2.0"
     }
   ]
 }
