@@ -56,5 +56,41 @@
     "project_only_strict": "rejected",
     "project_only_diagnostic_lines": 147,
     "scope": "project-only view excludes system declarations; not a full TU; not original Joern comparison"
+  },
+  "configured_catch2_probe": {
+    "repository": "catchorg/Catch2",
+    "commit": "cd07bc8ef4bd3a36c64cbe8f3e9e233ab3599f5f",
+    "source": "src/catch2/catch_timer.cpp",
+    "source_sha256": "4bb0ad2abff75f9d988439c64b39c977f1f426a97ac9adb468e4b4fef4959f7d",
+    "prepared_sha256": "397bba74c8aabc5e2349ab9a398ceeb2cab4462822ed75cd4b2b485bd93265f7",
+    "compiler": "Clang 22.1.8 macOS arm64, local CMake configuration",
+    "build": "passed",
+    "full_tu": "strict rejected before and after",
+    "project_only": "six functions, identical serialized outputs before and after; external declarations omitted",
+    "diagnostic_lines_before": 512,
+    "diagnostic_lines_after": 507,
+    "removed": 6,
+    "added": 1,
+    "added_diagnostic": "expected closing brace at end of input; cause not yet determined"
+  },
+  "scoped_enum_candidate": {
+    "base_commit": "9f8cad170d6b6883fe08627fa524ecb28128380d",
+    "candidate_commit": "da2fda8ea7f5fd80d2c41a4191ef6847f3e1ddf2",
+    "pull_request": "https://github.com/Noelo-Lab/rust-joern/pull/10",
+    "compiler_validated_variants": 24,
+    "baseline_accepted": 0,
+    "candidate_accepted": 24,
+    "original_joern": "one reduced function: directed CFG topology and entry/exit roles match",
+    "fmt_project_only_diagnostic_lines_before": 176,
+    "fmt_project_only_diagnostic_lines_after": 169,
+    "fmt_scope": "diagnostic view excludes external declarations; remains strict rejected",
+    "saved_input_replay": {
+      "cpp_prepared_inputs": 1225,
+      "additional_c_cpp_controls": 381,
+      "changed_serialized_successful_analyses": 0,
+      "lost_parses": 0,
+      "new_parses": 0
+    },
+    "caveats": "synthetic combinations not entire C++ language; unrelated Catch2 EOF diagnostic remains unresolved"
   }
 }
