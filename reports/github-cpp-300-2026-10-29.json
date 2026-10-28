@@ -1,0 +1,56 @@
+{
+  "inventory_sha256": "a2fadd1b16c7d0287e1d111419a6a2c2326eafbc7a8dc9db1fb5fb8cf8d76327",
+  "raw_strict": {
+    "requested": 578,
+    "status_counts": {
+      "parse_error": 573,
+      "no_functions": 4,
+      "output": 1
+    },
+    "scope": "unpreprocessed raw sources; failures do not measure parser quality"
+  },
+  "standalone_clang": {
+    "requested": 578,
+    "status_counts": {
+      "compiler_rejected_or_missing_context": 564,
+      "native_parse_rejected": 8,
+      "no_functions": 6
+    },
+    "compiler": "Homebrew clang version 22.1.8",
+    "standard": "gnu++17 experimentally selected; original unknown",
+    "scope": "no project build or guessed headers; compiler rejection includes missing context"
+  },
+  "owner_only_diagnostic": {
+    "qualified_rejected_inputs_examined": 8,
+    "rust_parsed": 3,
+    "rust_rejected": 5,
+    "source_context": "compiler line markers retain only the selected source file; included header declarations removed",
+    "original_joern_comparison": {
+      "functions_compared": 1,
+      "directed_topology_equal": 1,
+      "node_edge_role_and_semantics": "not evaluated"
+    }
+  },
+  "layout_mutation": {
+    "source_inputs": 3,
+    "variants": 24,
+    "matching": 24,
+    "seed": 20261029,
+    "scope": "function identities, call-name multisets and entry/exit-colored CFG topology; not semantic parity"
+  },
+  "rust_joern_head": "ffda6e29e8470dc8e3c1958a3939c6fc23458a5c",
+  "rust_binary_sha256": "965aba1e9368f61fe6fb5fd1a7d7561ddc3f418c014bd0df88df0877d2a8be1b",
+  "configured_fmt_probe": {
+    "repository": "fmtlib/fmt",
+    "commit": "f87a75e15262614ce8aa0e6a0664df9d0823fb92",
+    "source": "src/os.cc",
+    "source_configuration": "local CMake release; Clang 22.1.8; C++17 compiler default; macOS arm64",
+    "build": "passed",
+    "prepared_sha256": "a3a640befaa75b5f7f84ab99dad895e9b694672edfbb7d7b55d86da6be30fd33",
+    "full_strict": "rejected",
+    "full_diagnostic_lines": 335,
+    "project_only_strict": "rejected",
+    "project_only_diagnostic_lines": 147,
+    "scope": "project-only view excludes system declarations; not a full TU; not original Joern comparison"
+  }
+}

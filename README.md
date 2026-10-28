@@ -104,3 +104,39 @@ python3 scripts/prepare_zlib.py --checkout workspace/zlib-upstream --compiler /p
 ```
 
 `--compiler-target` and `--sysroot` support an explicit Clang target and SDK. `prepare_snappy.py` supports the same object verification options and expands bounded CMake response files while recording their hashes. A successful cross-compilation is not a native-OS execution test.
+
+## Pinned GitHub C++ source inventory
+
+`scripts/discover_github_cpp.py` records distinct GitHub repositories, exact
+commits, repository-reported SPDX metadata and source blob/SHA-256 hashes. It
+selects a primary source and a larger stress candidate per repository, and
+keeps source payloads in ignored `workspace/`. It does not establish file-level
+license, build flags, compiler standard, complete source ownership or CFG
+ground truth. GitHub search is popularity-biased and tree listings can be
+truncated. Inspect these limits before interpreting coverage.
+
+`scripts/run_github_cpp.py` runs raw unpreprocessed files as a diagnostic only.
+`scripts/qualify_github_cpp.py --all-files` instead attempts a standalone Clang
+GNU C++17 syntax check, preprocessing and strict CFG extraction. This is a new
+experimental configuration, not each project's original build; missing headers,
+generated files and dependencies are retained as explicit failures. A parse
+result does not prove function completeness or CFG semantics.
+
+`scripts/fuzz_layout_cpp.py` checks deterministic blank-line and line-ending
+mutations of prepared, source-owned snippets, rejecting raw strings and escaped
+line continuations where those mutations might change semantics. It compares
+function names, call-name multisets and colored CFG topology. It is a narrow
+metamorphic check, not a substitute for compiler or original Joern comparison.
+
+The frozen initial inventory and bounds are published at
+https://huggingface.co/datasets/sjkim1127/joern-cpp-github-300 . Source text is
+not redistributed there. Local result artifacts stay under `workspace/`.
+
+For a clean checkout built using CMake, `scripts/prepare_compile_command.py`
+selects exactly one TU from `compile_commands.json`, requires the expected
+checkout commit and no local changes, and reuses its flags for preprocessing.
+Response files and ambiguous commands are rejected. `scripts/project_line_view.py`
+can produce a diagnostic project-only view from compiler line markers; removing
+external declarations can change bindings, so that view is not a complete TU.
+The recorded fmt probe uses a new local configuration rather than the original
+upstream build. See `reports/github-cpp-300-2026-10-29.json` for its limits.
