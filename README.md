@@ -23,6 +23,38 @@ python3 -m unittest discover -s tests -v
 
 The fetcher verifies pinned Git blob SHA-1 or SHA-256 and size. Input, graph and per-input results are under ignored `workspace/`. Records include input and backend hashes and explicit failure/timeout status. Resume reuses matching records and validates saved successful graph hashes. `--no-resume` reruns. `--strict` is always passed; `.ii` inputs additionally use `--preprocessed`. Graph production is recorded as `output`, not declared correct or complete. Raw source rejection is not a measure of the source's validity.
 
+### Replaying preserved parser inputs
+
+For a local Rust-Joern qualification run, completed checkpoint requests can be
+frozen as a separate replay population without reusing parser results:
+
+```sh
+python3 scripts/freeze_checkpoint_inputs.py --checkpoints /path/to/run/checkpoints --output workspace/replay/inputs.json
+```
+
+The tool verifies each input hash against the row, each request against the
+original run contract, and the completed record envelope. It retains repeated
+requests and reports their counts separately from distinct input hashes. It
+does not verify the original project, language standard or source validity and
+does not establish CFG correctness. The output contains input text: keep it in
+ignored local storage until source provenance and licensing are qualified.
+It refuses to overwrite an existing file. The output can be supplied to
+Rust-Joern's `scripts/qualify_corpus.py --inputs` for a fresh independent run.
+
+`scripts/paired_runtime.py` runs two frozen Rust-Joern CLI executables on the
+same prepared files in alternating order. It records binary/input hashes,
+individual exit statuses and wall-time samples, including startup and output
+serialization. The chosen input language must apply to all supplied files:
+
+```sh
+python3 scripts/paired_runtime.py --baseline /path/to/base/rust-joern --candidate /path/to/new/rust-joern --language cpp --input /path/to/prepared.ii --repeats 5 --output workspace/replay/paired-runtime.json
+```
+
+Run timing experiments when the machine is otherwise idle and report rejected
+inputs and timeouts; a fast rejection is not a successful CFG. This measures
+warm-cache CLI runs, not Joern/JVM parity, end-to-end DecBench speed, memory,
+or a statistically controlled platform-wide speedup.
+
 The next work is source-context collection, verified compiler/std provenance, original Joern differential runs with independent environments, expected-function and CFG topology/entry/exit validation, and semantic effect checks. Avoid using oracle source/debug facts to repair decompiler output when evaluating a producer.
 
 ## Controlled standard-mode experiment
