@@ -26,9 +26,13 @@
     "rust_rejected": 5,
     "source_context": "compiler line markers retain only the selected source file; included header declarations removed",
     "original_joern_comparison": {
-      "functions_compared": 1,
-      "directed_topology_equal": 1,
-      "node_edge_role_and_semantics": "not evaluated"
+      "source_inputs": 3,
+      "unique_name_functions_compared": 7,
+      "directed_topology_equal": 7,
+      "ambiguous_native_name": "four manip entries excluded because original name-keyed export collapses them",
+      "node_edge_role_and_semantics": "not evaluated",
+      "tool": "PyJoern 4.0.150.4 / Joern 4.0.150",
+      "note": "external declarations removed; input is diagnostic and not a complete compilation unit"
     }
   },
   "layout_mutation": {
