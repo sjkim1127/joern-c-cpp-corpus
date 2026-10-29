@@ -1,0 +1,39 @@
+{
+  "schema": "joern-cpp-split-candidate-investigation-v1",
+  "original_reference": "Joern 4.0.150 / PyJoern 4.0.150.4",
+  "scope": "diagnostic controls, not full C++ support",
+  "catch2": {
+    "source_commit": "cd07bc8ef4bd3a36c64cbe8f3e9e233ab3599f5f",
+    "prepared_sha256": "397bba74c8aabc5e2349ab9a398ceeb2cab4462822ed75cd4b2b485bd93265f7",
+    "pr10_base_diagnostics": 512,
+    "pr10_candidate_diagnostics": 507,
+    "new_eof_diagnostic": "expected closing brace at end of input",
+    "trace": "operator>= starts at line 52011; its lexical body closes at line 52013; parser advanced to line 52255 crossing enclosing namespace",
+    "pr3_base_diagnostics": 432,
+    "pr3_plus_pr10_diagnostics": 426,
+    "pr3_plus_pr10_added": 0,
+    "pr3_plus_pr10_removed": 6,
+    "minimal_compiler_valid_operator_alone": "did not reproduce over-consumption",
+    "full_translation_unit": "strict parsing fails in all tested profiles"
+  },
+  "specialization": {
+    "candidate_branch": "codex/cpp-type-name-context",
+    "candidate_commit": "586dcf7c7fd0eb9017365a95e1ea7db16278096c",
+    "candidate_has_uncommitted_changes": true,
+    "candidate_library_sha256": "811fb90dea5e72ea5c77ed1a15c90a7437bffeefb26ba488fd2cc4ee9c763d3e",
+    "control_source_sha256": "b9932f0aa0e24e61d540e5974e89db6073d8ff16985732a02ec417ccb3cc1bd7",
+    "targeted_tests_passed": 8,
+    "control_functions": 5,
+    "directed_cfg_entry_exit_isomorphic": 5,
+    "original_fullnames": {
+      "specialized": "Box.specialized:int(int)",
+      "partial": "Box.partial:int(int)"
+    },
+    "candidate_fullnames": {
+      "specialized": "Box<int>.specialized:int(int)",
+      "partial": "Box<T*>.partial:int(int)"
+    },
+    "finding": "function fullnames differ on specialization and impact on lookup/metrics remains unvalidated",
+    "not_proven": "full corpus or semantic equivalence"
+  }
+}
