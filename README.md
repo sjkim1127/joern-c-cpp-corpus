@@ -57,6 +57,14 @@ or a statistically controlled platform-wide speedup.
 
 The next work is source-context collection, verified compiler/std provenance, original Joern differential runs with independent environments, expected-function and CFG topology/entry/exit validation, and semantic effect checks. Avoid using oracle source/debug facts to repair decompiler output when evaluating a producer.
 
+The [C++ benchmark design](BENCHMARK.md) defines separate real-project,
+language-boundary, decompiler-output and stress tracks, admission evidence,
+function/CFG accounting and performance budgets. Its
+[plan](manifests/benchmark-v1-plan.json) and
+[audited seed baseline](reports/benchmark-design-baseline-2026-11-18.json)
+distinguish collected raw files from qualified compilation units. The design
+is not yet a complete executable benchmark.
+
 ## Controlled standard-mode experiment
 
 The following checks out exact upstream commits and uses the local Clang and local system headers. It is a reproducible *profile*, not a claim to reproduce the original corpus build. Ninja requires at least C++17 in its checked-in CMake configuration.

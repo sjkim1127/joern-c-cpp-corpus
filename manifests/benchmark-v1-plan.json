@@ -1,0 +1,301 @@
+{
+  "all_existing_inventories_are_development_data": true,
+  "broader_release_targets_not_current_counts": {
+    "distinct_tus": 100,
+    "independently_inventoried_written_definitions": 10000,
+    "qualified_projects": 24
+  },
+  "design": "BENCHMARK.md",
+  "existing_cohort_manifest_sha256": "266c5ceb006cf12b0218bfad4a274f8d33ba70807507e7f9726630c1bcf68700",
+  "existing_inventory_sha256": "a2fadd1b16c7d0287e1d111419a6a2c2326eafbc7a8dc9db1fb5fb8cf8d76327",
+  "next_candidates": [
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "cli/network-client",
+      "repository": "aria2/aria2",
+      "repository_license_metadata": "GPL-2.0",
+      "revision": "9e7273583f83e881e3ec067b523ba88724088d2f",
+      "source_leads": [
+        {
+          "path": "src/fmt.cc",
+          "sha256": "59f8f8b3f3c54a0a65704e61092bc6a6fc0c752ff928daa72efc954af804ccce"
+        },
+        {
+          "path": "src/OptionHandlerFactory.cc",
+          "sha256": "3f69333d7b11dd2618f2de0ec6d5a097e7f11ae79ddc02b8b6803144d38100b4"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "server/rpc",
+      "repository": "apache/brpc",
+      "repository_license_metadata": "Apache-2.0",
+      "revision": "07bcdad23a358a1370d9e6d3b28033e110c30bbe",
+      "source_leads": [
+        {
+          "path": "src/brpc/ts.cpp",
+          "sha256": "4721413a72f67479ae4b92bf21de56ba8ddb7fb6f69ad5be845bfa660df3e90e"
+        },
+        {
+          "path": "test/brpc_channel_unittest.cpp",
+          "sha256": "b9f1ba597c7a4fa1227ffa9a7d96de3c1551efd97ee81c428d77f1c471343da6"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "server/http",
+      "repository": "drogonframework/drogon",
+      "repository_license_metadata": "MIT",
+      "revision": "360980c9cd7205b94a0728a10eaa8cff19656977",
+      "source_leads": [
+        {
+          "path": "lib/src/Hodor.cc",
+          "sha256": "d35b36c07a4521b98de629f78e9b4ab8800752bd54514459040bfbd7681d4fe6"
+        },
+        {
+          "path": "orm_lib/tests/db_test.cc",
+          "sha256": "6d13d23e5b9392163f34e66794fe5d2a7c382f8e8d380019563621230a7434b9"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "library/web-framework",
+      "repository": "oatpp/oatpp",
+      "repository_license_metadata": "Apache-2.0",
+      "revision": "f83d648fd82dc222ef88aabbafb68efbd7d7bf50",
+      "source_leads": [
+        {
+          "path": "src/oatpp/base/Log.cpp",
+          "sha256": "d23bf3ed88101d35628b8c235f1f6da3d2e551ed94367f86715d22fd22c6d5d0"
+        },
+        {
+          "path": "src/oatpp/data/mapping/Tree.cpp",
+          "sha256": "5a77d404b28479c766d3e58d46baa5ed3e53f4fe4e3324be5b0abc9599fc5119"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "windows/cli-and-com",
+      "repository": "microsoft/winget-cli",
+      "repository_license_metadata": "MIT",
+      "revision": "5d302e449b63ca1534bf4b7c871f048ad07d5dca",
+      "source_leads": [
+        {
+          "path": "src/WinGetServer/Utils.cpp",
+          "sha256": "2611a8959d6642775eb510726c00e86b3a816c448b6f810a400c5a721cf2ebdb"
+        },
+        {
+          "path": "src/AppInstallerCLITests/SQLiteIndex.cpp",
+          "sha256": "f81f17ae22a8d853cc091def57142b7158baba4160457ce0868fc7393ebf6f4a"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "gui/reverse-engineering",
+      "repository": "WerWolv/ImHex",
+      "repository_license_metadata": "GPL-2.0",
+      "revision": "34483cb90527cd71c92049ef3b1b2cc27936a1d4",
+      "source_leads": [
+        {
+          "path": "main/gui/source/main.cpp",
+          "sha256": "6da74599b62026c3b34664c20df6a1d0ed5901d2f82fc8947bae9969ab115526"
+        },
+        {
+          "path": "plugins/builtin/source/content/views/view_pattern_editor.cpp",
+          "sha256": "ec744f942fffadb1a21216744ac4e4421fc7112a2a0aecf9e7083cefd00c439b"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "gui/qt-network-client",
+      "repository": "shadowsocks/shadowsocks-qt5",
+      "repository_license_metadata": "LGPL-3.0",
+      "revision": "2692abea80435c16cb24f14cc3dd336b398a3c19",
+      "source_leads": [
+        {
+          "path": "src/main.cpp",
+          "sha256": "3352950fec63184bff9188b536e25fc1f49538fc9fc5577350291b39a5f598b1"
+        },
+        {
+          "path": "src/mainwindow.cpp",
+          "sha256": "93eb0c7fe39ebab77639b5308fb9a142488f22a9137591f1376bf8016f35080b"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "compiler/jit",
+      "repository": "asmjit/asmjit",
+      "repository_license_metadata": "Zlib",
+      "revision": "0464e1c8f1f43c861a0c73d4e59437fff255cdd9",
+      "source_leads": [
+        {
+          "path": "asmjit/axl/arena.cpp",
+          "sha256": "e688a12a7da8dbcb85661f419c47c06aa4c332af88f1d318def1ea637aa83c9e"
+        },
+        {
+          "path": "asmjit-testing/bench/asmjit_bench_codegen_x86.cpp",
+          "sha256": "8adfd9806b9445e746afd571d4fd11a846bb9679f35c48e11cec1ad003fc9419"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "compiler/language-runtime",
+      "repository": "jank-lang/jank",
+      "repository_license_metadata": "MPL-2.0",
+      "revision": "ed7bc1636fde5b20f8d22d664a1f6124dfe583a9",
+      "source_leads": [
+        {
+          "path": "compiler+runtime/src/cpp/main.cpp",
+          "sha256": "781fb202972a65bebaea85f66e82421ce7109f5e262ca421c5fd7a7878da424b"
+        },
+        {
+          "path": "compiler+runtime/test/cpp/jank/read/lex.cpp",
+          "sha256": "07cbf86de94fbf0148f627504ef36ec62e11696d47d4aeb0d67e31a14db26d78"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "application/ocr",
+      "repository": "tesseract-ocr/tesseract",
+      "repository_license_metadata": "Apache-2.0",
+      "revision": "7e548e6eff172f38f97664afe7f7ce40db36c8d6",
+      "source_leads": [
+        {
+          "path": "src/svpaint.cpp",
+          "sha256": "ab60050aff419982648f1202d98a1f27a71ffcd5c0f846a754445daeb229663b"
+        },
+        {
+          "path": "src/lstm/functions.cpp",
+          "sha256": "efa3c4e55b22fdabee41dc8a53191be929d93192ca5728a4268be898c3b44958"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "library/testing",
+      "repository": "google/googletest",
+      "repository_license_metadata": "BSD-3-Clause",
+      "revision": "cd8e73f067129f8489e35c7b51c7a68552b289d2",
+      "source_leads": [
+        {
+          "path": "googlemock/src/gmock.cc",
+          "sha256": "1376daf6387eac94b5afaf2dfbf2e3aac098b5f97985f3f5660ab3f7d4948452"
+        },
+        {
+          "path": "googlemock/test/gmock-matchers-containers_test.cc",
+          "sha256": "3663f472b4b8f646da616506fde7248cac29c909211b4c2036abd7e6d220533f"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    },
+    {
+      "build_profile": null,
+      "file_license_verified": false,
+      "proposed_domain": "library/testing",
+      "repository": "catchorg/Catch2",
+      "repository_license_metadata": "BSL-1.0",
+      "revision": "cd07bc8ef4bd3a36c64cbe8f3e9e233ab3599f5f",
+      "source_leads": [
+        {
+          "path": "src/catch2/catch_timer.cpp",
+          "sha256": "4bb0ad2abff75f9d988439c64b39c977f1f426a97ac9adb468e4b4fef4959f7d"
+        },
+        {
+          "path": "src/catch2/internal/catch_run_context.cpp",
+          "sha256": "96968347d6628b0433814eda2efec75edd498da6cab32355c9af6af89bc06088"
+        }
+      ],
+      "split": "development_candidate",
+      "status": "source_acquired_build_unqualified"
+    }
+  ],
+  "proposed_standard_modes": [
+    "c++98",
+    "c++03",
+    "c++11",
+    "c++14",
+    "c++17",
+    "c++20",
+    "c++23"
+  ],
+  "proposed_targets": [
+    {
+      "arch": "x86_64",
+      "os": "linux"
+    },
+    {
+      "arch": "aarch64",
+      "os": "linux"
+    },
+    {
+      "arch": "x86_64",
+      "os": "windows"
+    },
+    {
+      "arch": "arm64",
+      "os": "windows"
+    },
+    {
+      "arch": "x86_64",
+      "os": "macos"
+    },
+    {
+      "arch": "arm64",
+      "os": "macos"
+    }
+  ],
+  "provisional_slowdown_budgets": {
+    "median_ratio": 1.05,
+    "p95_ratio": 1.1
+  },
+  "schema": "joern-cpp-benchmark-plan-v1",
+  "standard_modes_apply_only_to_supported_build_cells": true,
+  "status": "design_not_implemented_benchmark",
+  "tracks": [
+    "real_projects",
+    "language_boundaries",
+    "decompiler_outputs",
+    "stress_mutations"
+  ]
+}

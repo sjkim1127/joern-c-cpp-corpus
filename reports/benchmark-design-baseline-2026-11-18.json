@@ -1,0 +1,498 @@
+{
+  "audit": {
+    "report_alone_is_not_a_self_contained_replay_dataset": true,
+    "script": "workspace/benchmark-design-2026-11-18/audit.py",
+    "script_sha256": "8d3123e4151dddb5e235b6966ecebe3405d099e68761c92780721aa005b7633b",
+    "source_artifacts_retained_locally": true
+  },
+  "date": "2026-11-18",
+  "discovery_inventory": {
+    "build_qualified_project_count": null,
+    "distinct_source_hashes": 578,
+    "inspection_status_counts": {
+      "no_eligible_cpp": 2,
+      "ready": 300
+    },
+    "note": "ready is the acquisition script status, not benchmark admission",
+    "selected_file_records": 578,
+    "sha256": "a2fadd1b16c7d0287e1d111419a6a2c2326eafbc7a8dc9db1fb5fb8cf8d76327",
+    "source_acquired_repositories": 300,
+    "verified_file_hashes": 578
+  },
+  "fresh_backend_execution": false,
+  "saved_regression_cohort": {
+    "baseline_outcomes": {
+      "body_cfg": 4000,
+      "degenerate": 275,
+      "missing": 305
+    },
+    "candidate_library_sha256": "0dea5d357047564928ed1dbfc2ac70a571396a113ccc6ef8c82819ae82dc56cc",
+    "candidate_outcomes": {
+      "body_cfg": 4042,
+      "degenerate": 282,
+      "missing": 256,
+      "requested": 4580
+    },
+    "capture_hashes": [
+      {
+        "case": "leveldb-00",
+        "sha256": "b9096028c20e6a25884172d23fa7e6e42ce2cedcd863c1e1adacc84b7a6f209c"
+      },
+      {
+        "case": "leveldb-01",
+        "sha256": "a2af457567ffae6d2bfb66efd7c66a6614e4284ae68ec1082b72e270965225bf"
+      },
+      {
+        "case": "leveldb-02",
+        "sha256": "76a07811ff89ddbb93c6db9af1cc25d6275701c815ed085656fa7b7a1a9ea964"
+      },
+      {
+        "case": "leveldb-03",
+        "sha256": "8bb7b982f088948b07eb1867b801690d5645695255c5ab940b71a46857a005da"
+      },
+      {
+        "case": "leveldb-04",
+        "sha256": "0fcc9dad8c98d45c9e2488faa7f7aab0197c8107961d67ea88a04de1305e80ce"
+      },
+      {
+        "case": "leveldb-05",
+        "sha256": "fd7a462fedc014dfcaed5d7acfab52ce7028a89a9b878716ec87b75b01124d25"
+      },
+      {
+        "case": "leveldb-06",
+        "sha256": "a039117f3750fc0c5b4da803406e859d318f0f734e1b27aaf1bb7df51c836d40"
+      },
+      {
+        "case": "leveldb-07",
+        "sha256": "7fec9544b733c174c174b9858971dfbbf0ec6c71b057f031d57a2a5cc28645fa"
+      },
+      {
+        "case": "leveldb-08",
+        "sha256": "501ac58e1aad17e94564bac67d0c9b095932fd58e41a6be594a15871e96b16bf"
+      },
+      {
+        "case": "leveldb-09",
+        "sha256": "119cd57447e42ecb0614bd0ce788f6e645633d3d76d633d7ecbcb331558d6fe0"
+      },
+      {
+        "case": "leveldb-10",
+        "sha256": "536f2b98f0edc76899c51c37d3f4f5e060fdae9bcd334c0136cc926a409b1e57"
+      },
+      {
+        "case": "leveldb-11",
+        "sha256": "b47a2f29d232594284a2c94f0712b2ced8220169c511070a21bbce8b034b883a"
+      },
+      {
+        "case": "jsoncpp-00",
+        "sha256": "8859f24274a3499a7be2212b82f2e920c66af6677489d7473bbffb7873673891"
+      },
+      {
+        "case": "jsoncpp-01",
+        "sha256": "4f1f5dad3242bfe2df854715c672db5b2c445e3154ac90b67daa47b80caba3e8"
+      },
+      {
+        "case": "jsoncpp-02",
+        "sha256": "604bf1994f144497a0f8b433975e2a75944ebf92694d23fad645d0bac065730d"
+      },
+      {
+        "case": "jsoncpp-03",
+        "sha256": "3bed6ad73d08e9a5db124c830e88abd45028ca445400db5be43878e6a75ea78b"
+      },
+      {
+        "case": "yaml-cpp-00",
+        "sha256": "05d3769c35d8af0bef981404ffc29c1db63c40e3bbe34bbdc53c655a7fe231d4"
+      },
+      {
+        "case": "yaml-cpp-01",
+        "sha256": "69751b59282027403687e48b90eef73eb668759e34d87549fb6544cbfa0d0dea"
+      },
+      {
+        "case": "yaml-cpp-02",
+        "sha256": "1c41e565fe548384f3827574b419657c758f41b10177ebbd76382e863cfa8f0a"
+      },
+      {
+        "case": "yaml-cpp-03",
+        "sha256": "3fca1b14ab4a916a0dcb0592b2b77d63ea014ec6e471e276995573eb2d4f9292"
+      },
+      {
+        "case": "yaml-cpp-04",
+        "sha256": "439ad5fd152a2cc905b7a0a92ecd1c65f21db99559e37bf11ee7fd3be7f4bdbc"
+      },
+      {
+        "case": "yaml-cpp-05",
+        "sha256": "a3586221474d3a12bdc7f5c9ca8f4b20ab0e16ff75256683869fa9862659c0b1"
+      },
+      {
+        "case": "yaml-cpp-06",
+        "sha256": "ed91d8c94d823bd2788bf8f927a6a286806202cfa20de2a2398d81abf9144b46"
+      },
+      {
+        "case": "yaml-cpp-07",
+        "sha256": "b480bfe63fb396a075aa018457815cf1607d75222b0e6a2a59f9b5a71f8c4141"
+      },
+      {
+        "case": "yaml-cpp-08",
+        "sha256": "33635b4f54ccd3b7d843d827d53fe5547afb9836b50aca464981c785ab24e93b"
+      },
+      {
+        "case": "yaml-cpp-09",
+        "sha256": "fd20a9dd61f8778967508520854249eff5527f1b6f399976fe80874f24d27a02"
+      },
+      {
+        "case": "yaml-cpp-10",
+        "sha256": "d291d07afe4a6a5c82dd514c1d514a5c8552a9f5b26e1edb326e60ef93e0141e"
+      },
+      {
+        "case": "yaml-cpp-11",
+        "sha256": "b227f76bf103742ca5025c30a88e7ea87b754a194db0f8e4ed2d4217d879aaf6"
+      },
+      {
+        "case": "tinyxml2-00",
+        "sha256": "1900567553be8d761375828c239da7bdd8953164c202c5ce8076f719d376ef96"
+      },
+      {
+        "case": "luau-00",
+        "sha256": "053e55a59ebce01f8d8a8fada17fceee8a089b73509c88abe104b286a88832f6"
+      },
+      {
+        "case": "luau-01",
+        "sha256": "c8b4ed088481fce50d306aecc14d7a226be475499c64d8d30e3b2f397a604104"
+      },
+      {
+        "case": "luau-02",
+        "sha256": "578af7e7e7c9b899851761a018075d4dbb1f131a58aa78240a9e10df74b8aa99"
+      },
+      {
+        "case": "luau-03",
+        "sha256": "a187b49827984a28d21430590b7ed88821224011809736c3f9439838e8d8328d"
+      },
+      {
+        "case": "luau-04",
+        "sha256": "f34991d69269180ad0600f04446b4b36765f697f2e809457623618a1db60883d"
+      },
+      {
+        "case": "luau-05",
+        "sha256": "18a0824c765ab38381548f36252cc02f0c6be4d5d2aa926b4423f88fc89c8ee0"
+      },
+      {
+        "case": "luau-06",
+        "sha256": "f823d882c785e9ad7a842ef4c96f88829b578dcbf5032e4f0d7a36abafecd781"
+      },
+      {
+        "case": "luau-07",
+        "sha256": "977d01945cd91ac56ac7f4d231900c3aa6f15d3672d9df201051788a4b283ab2"
+      },
+      {
+        "case": "luau-08",
+        "sha256": "ab9a66cfb8815cd4a1b4743328a71f9796adcd2107a00d4ecb27db0ae5f56eb9"
+      },
+      {
+        "case": "luau-09",
+        "sha256": "bc63444f0a98918d0b492da5c8bc6e5713c311c0836ff2c7cabceb31d9ca791b"
+      },
+      {
+        "case": "luau-10",
+        "sha256": "bf874efe102e534eaa4fef63fb2a4d983b9d209173896465cce26114e814c494"
+      },
+      {
+        "case": "luau-11",
+        "sha256": "9d807d4857dd086019567b2f27ceb19bd7cb7307f279c3096f26de95192e4128"
+      },
+      {
+        "case": "luau-12",
+        "sha256": "12c40b60d1439a15a7f3f8974ec990d2aa5a1bb7715c8bc9bb1c20f724627ce5"
+      },
+      {
+        "case": "luau-13",
+        "sha256": "20aeeb8c61deceeaf3e40428dd290f8f981607f316f56a764a11ce825858483d"
+      },
+      {
+        "case": "libzmq-00",
+        "sha256": "010e9f492118007b1c3610a472427e95ce0ba1a4ae53093290e7505a6337c79d"
+      },
+      {
+        "case": "libzmq-01",
+        "sha256": "948c96fdff48aebb82a80a69fd9b934eb67b306ef11c7bd29eccdd091c25685b"
+      },
+      {
+        "case": "libzmq-02",
+        "sha256": "70035b9232e3b73532a1c35c973cec00e16b8b7a5ebd9d0c0358b0215a8c3347"
+      },
+      {
+        "case": "libzmq-03",
+        "sha256": "ebcf3b897ac294e164aefa427c973a5cd3549345fb6c0beb1364e0b1f8dd08c5"
+      },
+      {
+        "case": "libzmq-04",
+        "sha256": "37fc0fca5b8c8ab17dd1b7d7c573dd91c422f86ed8d2c7e9f46f3ca201907bef"
+      },
+      {
+        "case": "libzmq-05",
+        "sha256": "13c4b88c30980a3401aec1e9c8be463ccab99983d30b892658bc8effc8ecb9ce"
+      },
+      {
+        "case": "libzmq-06",
+        "sha256": "a1fbb911f3ba7b13887099c7c6b1461ae26f19112a66ff52dc63ee88f94f717f"
+      },
+      {
+        "case": "libzmq-07",
+        "sha256": "1ece81fc2a5a05f9ab978a5c27c4bcfc249a5c69b6fe2eb3203fbe08d5bb3fe3"
+      },
+      {
+        "case": "libzmq-08",
+        "sha256": "7d832ef149800e573b73572831e1e87d7666d88e477943620ce32751fe00ad3b"
+      },
+      {
+        "case": "libzmq-09",
+        "sha256": "1f4dd9e7e9ada1e5d15da44cef114101946d2c84b3831055209330c35e2db1aa"
+      },
+      {
+        "case": "libzmq-10",
+        "sha256": "f6666cf3950ec7a84244cbc8418658650705b5d0ebc52ba279d42cf208629fa1"
+      },
+      {
+        "case": "libzmq-11",
+        "sha256": "c4578651ed8227a6ba21f668f240245aa967f18f84a2e87c0c6128ba479ba3de"
+      },
+      {
+        "case": "OpenCC-00",
+        "sha256": "1047c163384c9fe3afcf1b278b776470aa274518d5fc98ee31a91f72c6c65367"
+      },
+      {
+        "case": "OpenCC-01",
+        "sha256": "ae6d55ba8525ba85f0038176e133947e1846d65251ee740b0731819df7835662"
+      },
+      {
+        "case": "OpenCC-02",
+        "sha256": "4615f607df4290abcf748ee75e85e7a1ba10e9d3d1d94cadf7e969ded1c44199"
+      },
+      {
+        "case": "OpenCC-03",
+        "sha256": "bf0008324557dfc170aa60454f9d00fe94ef1174caa050d805e99a92af2c2554"
+      },
+      {
+        "case": "OpenCC-04",
+        "sha256": "0d6e61355cb619096de9d1eb8516274b6c739853ddbaf628fde54f13823d0a29"
+      },
+      {
+        "case": "OpenCC-05",
+        "sha256": "6dab9629861ffe8eed23ed594fc7d0c5096be3912e880f18a16a1d4e1a37a669"
+      },
+      {
+        "case": "OpenCC-06",
+        "sha256": "1b7d8313197db5eb6af109597fc04c8e9aa5b1ed7fc03ff51822f47ad6e57e58"
+      },
+      {
+        "case": "OpenCC-07",
+        "sha256": "eaa097370db1322bdad91e581a5f2e59a0322307fcfd2bec840067e6792a4cc8"
+      },
+      {
+        "case": "OpenCC-08",
+        "sha256": "10e8d3d51a87d8eb7c44a4d3aea0edbf601afaadc01d37f6b88a9003ac370d4c"
+      },
+      {
+        "case": "OpenCC-09",
+        "sha256": "78728d4cf806980b71c589c2409421386302740e443dc534b514c45abf0ba361"
+      },
+      {
+        "case": "snappy-00",
+        "sha256": "e6dd9337bd3f669b261536110dceec2f16646de4e4daf3b364d555676d275d6f"
+      },
+      {
+        "case": "snappy-01",
+        "sha256": "95ed7a9bdd202e519893e72557d3c37b05218c8441d705e3e870586d1bff10ce"
+      },
+      {
+        "case": "snappy-02",
+        "sha256": "47bae84c7039b23c5a503da6217cdc7cba7f953fc638deb52aa1262b8387e5a6"
+      },
+      {
+        "case": "snappy-03",
+        "sha256": "ebe987b3ce1ece2c1c5bf39f9b29bd1daf1238eaf674ffd192817d50361262ca"
+      },
+      {
+        "case": "fmt-00",
+        "sha256": "490c8235d9d5cb0c84a09108450521473fdf5c60d049b663fd7d8c6320ff4755"
+      },
+      {
+        "case": "fmt-01",
+        "sha256": "011054b6cb509fdecfadb4d32f17844f926973ccbff04813642f32c351792a15"
+      },
+      {
+        "case": "ninja-00",
+        "sha256": "76d8d3d47fa119543a978757fe9e22bf7646989f74c1ac04e708af6fa3894552"
+      },
+      {
+        "case": "ninja-01",
+        "sha256": "c64e15e35dcef163ebbae0066df94ffc16c632a7edfd34818de907256a993634"
+      },
+      {
+        "case": "ninja-02",
+        "sha256": "12220daff26759e197a383d18da72ae70f1bc40422edffcb4bab7dc2e7d9cbc3"
+      },
+      {
+        "case": "ninja-03",
+        "sha256": "ab2433d7770b842eb985a762bdaeafdf9be4166b86e33592eba0525af67ad87a"
+      },
+      {
+        "case": "ninja-04",
+        "sha256": "3e0a23dc0ba0946c5edf8a4eefcd3eb997ff676cae0c2fee431258f050830843"
+      },
+      {
+        "case": "ninja-05",
+        "sha256": "1b73f8bb0584e467f4761b360faa7ebb7035ce895a3f081226dfe6e4cfc0a15c"
+      },
+      {
+        "case": "ninja-06",
+        "sha256": "40663d1ae6445a8f3f2fe6e12b2f0f755846b99ddd7a343849b058ca0bdbfe6d"
+      },
+      {
+        "case": "ninja-07",
+        "sha256": "d1964e91c8a9fa67e02e7bc0359ddc15b6e464a39575afad8d65883c1ad6bc8f"
+      },
+      {
+        "case": "ninja-08",
+        "sha256": "cc1d1ee54168a58877ba2fbcf5246b81d6150c483b61d515cef17be920fe9e42"
+      },
+      {
+        "case": "ninja-09",
+        "sha256": "95fd0618a46ccb5af44933de48ce6768adc15c49322731b53bfc8f810398c912"
+      },
+      {
+        "case": "ninja-10",
+        "sha256": "ea6666e3bfb33a0e9b74e749a79b3a455f161698a03978db6a53688a58a849a8"
+      },
+      {
+        "case": "ninja-11",
+        "sha256": "683250835afe8181d44081c20ab4416a87563f04163cda13991226d1a90425ad"
+      }
+    ],
+    "compatibility_outcomes_on_original_body_graphs": {
+      "degenerate": 17,
+      "match": 3614,
+      "missing": 54,
+      "topology_diff": 263
+    },
+    "controlled_speed_ratio": null,
+    "distinct_prepared_hashes": 83,
+    "distinct_source_definition_identities": 4580,
+    "equal_project_mean_body_graph_fraction": 0.8806752774374743,
+    "inventory_kind": "Tree-sitter observed definitions; compiler completeness unverified",
+    "manifest_sha256": "266c5ceb006cf12b0218bfad4a274f8d33ba70807507e7f9726630c1bcf68700",
+    "original_outcomes": {
+      "body_cfg": 3948,
+      "degenerate": 273,
+      "missing": 359
+    },
+    "original_standard": null,
+    "pooled_body_graph_fraction": 0.882532751091703,
+    "projects": [
+      {
+        "body_cfg": 207,
+        "degenerate": 28,
+        "missing": 1,
+        "project": "OpenCC",
+        "repository": "BYVoid/OpenCC",
+        "requested": 236,
+        "revision": "c363a7ba51d487950982bd8a589211ffbfd95ba1",
+        "tus": 10
+      },
+      {
+        "body_cfg": 24,
+        "missing": 13,
+        "project": "fmt",
+        "repository": "fmtlib/fmt",
+        "requested": 37,
+        "revision": "5fc5c910c03b82cd92c29feb623b9112063138bf",
+        "tus": 2
+      },
+      {
+        "body_cfg": 288,
+        "degenerate": 19,
+        "missing": 9,
+        "project": "jsoncpp",
+        "repository": "open-source-parsers/jsoncpp",
+        "requested": 316,
+        "revision": "3347a4b86bb914cb565f0cbda19c06e109513300",
+        "tus": 4
+      },
+      {
+        "body_cfg": 416,
+        "degenerate": 26,
+        "missing": 13,
+        "project": "leveldb",
+        "repository": "google/leveldb",
+        "requested": 455,
+        "revision": "7ee830d02b623e8ffe0b95d59a74db1e58da04c5",
+        "tus": 12
+      },
+      {
+        "body_cfg": 500,
+        "degenerate": 25,
+        "missing": 2,
+        "project": "libzmq",
+        "repository": "zeromq/libzmq",
+        "requested": 527,
+        "revision": "46493370217ac135246617fa2f6ac819d8b61bfc",
+        "tus": 12
+      },
+      {
+        "body_cfg": 1758,
+        "degenerate": 121,
+        "missing": 202,
+        "project": "luau",
+        "repository": "luau-lang/luau",
+        "requested": 2081,
+        "revision": "7d5f73364fdbbaa984fa545071630eba73cfea98",
+        "tus": 14
+      },
+      {
+        "body_cfg": 291,
+        "degenerate": 15,
+        "missing": 7,
+        "project": "ninja",
+        "repository": "ninja-build/ninja",
+        "requested": 313,
+        "revision": "e4a128055f7698522da6de2821ffe0761623f298",
+        "tus": 12
+      },
+      {
+        "body_cfg": 142,
+        "degenerate": 13,
+        "missing": 2,
+        "project": "snappy",
+        "repository": "google/snappy",
+        "requested": 157,
+        "revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+        "tus": 4
+      },
+      {
+        "body_cfg": 194,
+        "degenerate": 8,
+        "project": "tinyxml2",
+        "repository": "leethomason/tinyxml2",
+        "requested": 202,
+        "revision": "8224e427b655b83dae5e2298f1e6919523a78737",
+        "tus": 1
+      },
+      {
+        "body_cfg": 222,
+        "degenerate": 27,
+        "missing": 7,
+        "project": "yaml-cpp",
+        "repository": "jbeder/yaml-cpp",
+        "requested": 256,
+        "revision": "8eb618e889c003457d73f7c54777603835677ff4",
+        "tus": 12
+      }
+    ],
+    "requested_definition_candidates": 4580,
+    "result_rows_sha256": "af4cb1261cccf9cd197244b38bdd0a87b7d28cced77e6f32354c1feb64b59f29",
+    "saved_compiler_validation_mode": "gnu++17 experimental revalidation, not historical build provenance",
+    "semantic_cfg_correctness_fraction": null,
+    "tus": 83,
+    "verified_prepared_hashes": 83
+  },
+  "schema": "joern-cpp-benchmark-design-audit-v1",
+  "scope": "Local source/hash and saved-result population audit; no fresh backend execution"
+}
