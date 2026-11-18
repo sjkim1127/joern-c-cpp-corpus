@@ -4,6 +4,8 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest import mock
@@ -25,6 +27,60 @@ line_view = load("project_line_view")
 
 
 class InventoryTests(unittest.TestCase):
+    def test_cli_reads_inventory_inputs_for_nested_output(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "inputs").mkdir()
+            source = b"int f() { return 42; }\n"
+            (root / "inputs" / "x.cpp").write_bytes(source)
+            inventory = root / "inventory.json"
+            inventory.write_text(
+                json.dumps(
+                    {
+                        "results": [
+                            {
+                                "repository": "demo/project",
+                                "commit": "abc",
+                                "status": "ready",
+                                "files": [
+                                    {
+                                        "local_id": "x.cpp",
+                                        "path": "x.cpp",
+                                        "sha256": hashlib.sha256(source).hexdigest(),
+                                    }
+                                ],
+                            }
+                        ]
+                    }
+                )
+            )
+            backend = root / "backend"
+            backend.write_text(
+                "#!/bin/sh\n"
+                'test -f "$2" || exit 3\n'
+                'test "$5" = --output || exit 4\n'
+                'printf \'{"functions":[],"diagnostics":[]}\' > "$6"\n'
+            )
+            backend.chmod(0o755)
+            output = root / "runs" / "nested"
+            subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "scripts/run_github_cpp.py"),
+                    "--inventory",
+                    str(inventory),
+                    "--binary",
+                    str(backend),
+                    "--output",
+                    str(output),
+                    "--permissive",
+                ],
+                check=True,
+            )
+            summary = json.loads((output / "summary.json").read_text())
+            self.assertFalse(summary["strict"])
+            self.assertEqual(summary["results"][0]["status"], "no_functions")
+
     def test_line_view_keeps_only_proven_project_paths(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp).resolve()

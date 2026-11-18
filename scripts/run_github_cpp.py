@@ -8,11 +8,14 @@ import json
 from pathlib import Path
 import subprocess
 import tempfile
+import time
 
 
-def run(row, binary, output, timeout, binary_hash):
+def run(row, binary, output, timeout, binary_hash, *, input_dir=None, strict=True):
     repo, spec = row
-    path = output.parent / "inputs" / spec["local_id"]
+    path = (input_dir if input_dir is not None else output.parent / "inputs") / spec[
+        "local_id"
+    ]
     result = {
         "repository": repo["repository"],
         "commit": repo["commit"],
@@ -22,6 +25,7 @@ def run(row, binary, output, timeout, binary_hash):
         "standard": "unknown",
         "binary_sha256": binary_hash,
         "timeout_seconds": timeout,
+        "strict": strict,
     }
     out = output / "results" / f"{spec['local_id']}.json"
     graph = output / "graphs" / f"{spec['local_id']}.json"
@@ -37,6 +41,7 @@ def run(row, binary, output, timeout, binary_hash):
                 "sha256",
                 "binary_sha256",
                 "timeout_seconds",
+                "strict",
             )
             if all(prior.get(k) == result.get(k) for k in keys) and (
                 prior.get("status") not in ("output", "no_functions")
@@ -47,6 +52,8 @@ def run(row, binary, output, timeout, binary_hash):
                 )
             ):
                 return prior
+        graph.unlink(missing_ok=True)
+        started = time.perf_counter()
         proc = subprocess.run(
             [
                 str(binary),
@@ -54,7 +61,7 @@ def run(row, binary, output, timeout, binary_hash):
                 str(path),
                 "--language",
                 "cpp",
-                "--strict",
+                *(["--strict"] if strict else []),
                 "--output",
                 str(graph),
             ],
@@ -62,8 +69,14 @@ def run(row, binary, output, timeout, binary_hash):
             text=True,
             timeout=timeout,
         )
-        result.update(returncode=proc.returncode, stderr_tail=proc.stderr[-3000:])
-        if proc.returncode:
+        result.update(
+            returncode=proc.returncode,
+            stderr_tail=proc.stderr[-3000:],
+            elapsed_seconds=time.perf_counter() - started,
+        )
+        if proc.returncode < 0:
+            result["status"] = "backend_crash"
+        elif proc.returncode:
             result["status"] = "parse_error"
         elif not graph.is_file():
             result["status"] = "missing_output"
@@ -80,6 +93,9 @@ def run(row, binary, output, timeout, binary_hash):
                 status="output" if funcs else "no_functions",
                 function_count=len(funcs),
                 bad_cfg_edges=bad,
+                diagnostic_errors=sum(
+                    d.get("severity") == "error" for d in obj.get("diagnostics", [])
+                ),
                 graph_sha256=hashlib.sha256(graph.read_bytes()).hexdigest(),
             )
     except subprocess.TimeoutExpired:
@@ -102,6 +118,7 @@ def main():
     ap.add_argument("--output", type=Path, required=True)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--timeout", type=int, default=30)
+    ap.add_argument("--permissive", action="store_true")
     args = ap.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "graphs").mkdir(exist_ok=True)
@@ -117,7 +134,16 @@ def main():
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = [
-            pool.submit(run, x, binary, args.output, args.timeout, binary_hash)
+            pool.submit(
+                run,
+                x,
+                binary,
+                args.output,
+                args.timeout,
+                binary_hash,
+                input_dir=args.inventory.resolve().parent / "inputs",
+                strict=not args.permissive,
+            )
             for x in tasks
         ]
         for future in concurrent.futures.as_completed(futures):
@@ -130,6 +156,8 @@ def main():
         "inventory_sha256": hashlib.sha256(args.inventory.read_bytes()).hexdigest(),
         "binary_sha256": binary_hash,
         "timeout_seconds": args.timeout,
+        "strict": not args.permissive,
+        "timing_scope": "CLI elapsed time under concurrent load, including startup and serialization",
         "results": sorted(results, key=lambda x: (x["repository"], x["path"])),
     }
     (args.output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")

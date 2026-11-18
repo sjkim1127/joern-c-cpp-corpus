@@ -134,6 +134,10 @@ ground truth. GitHub search is popularity-biased and tree listings can be
 truncated. Inspect these limits before interpreting coverage.
 
 `scripts/run_github_cpp.py` runs raw unpreprocessed files as a diagnostic only.
+Its default is strict parsing. Run again with `--permissive` and a separate
+`--output` directory to measure recovery. Both modes read the `inputs/`
+directory beside the inventory and retain per-file outcomes and CLI elapsed
+times.
 `scripts/qualify_github_cpp.py --all-files` instead attempts a standalone Clang
 GNU C++17 syntax check, preprocessing and strict CFG extraction. This is a new
 experimental configuration, not each project's original build; missing headers,
