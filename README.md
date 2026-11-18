@@ -133,6 +133,12 @@ license, build flags, compiler standard, complete source ownership or CFG
 ground truth. GitHub search is popularity-biased and tree listings can be
 truncated. Inspect these limits before interpreting coverage.
 
+Use `--seed` to carry forward the exact commits and source hashes of an
+existing inventory into a separate output directory. The 1,000-repository
+expansion used the [recorded search queries](manifests/github-cpp-1000-queries.json),
+interleaving creation-date groups and project topics. Each added source has
+the same revision and blob verification as the seed sources.
+
 `scripts/run_github_cpp.py` runs raw unpreprocessed files as a diagnostic only.
 Its default is strict parsing. Run again with `--permissive` and a separate
 `--output` directory to measure recovery. Both modes read the `inputs/`
@@ -142,6 +148,8 @@ times.
 The [311-repository run](reports/BENCHMARK-SCALE-2026-11-18.md) covers all 578
 raw files and a separate compiler-checked comparison of 67 prepared TUs from
 36 repositories. Its report gives the denominator and evidence for each result.
+The [1,000-repository run](reports/BENCHMARK-1000-2026-11-18.md) compares the
+baseline and local C++ parser probe on the expanded raw inventory.
 `scripts/qualify_github_cpp.py --all-files` instead attempts a standalone Clang
 GNU C++17 syntax check, preprocessing and strict CFG extraction. This is a new
 experimental configuration, not each project's original build; missing headers,

@@ -1,0 +1,246 @@
+{
+  "comparison": {
+    "permissive": {
+      "files_with_changed_output_or_status": 15,
+      "function_record_count_decreases": 0,
+      "function_record_count_increases": 10,
+      "new_files_with_changed_output_or_status": 7,
+      "status_transitions": {
+        "no_functions \u2192 output": 1,
+        "output \u2192 output": 14
+      },
+      "unchanged_files": 1900
+    },
+    "strict": {
+      "files_with_changed_output_or_status": 0,
+      "function_record_count_decreases": 0,
+      "function_record_count_increases": 0,
+      "new_files_with_changed_output_or_status": 0,
+      "status_transitions": {},
+      "unchanged_files": 1915
+    }
+  },
+  "created_years": {
+    "2008": 27,
+    "2009": 16,
+    "2010": 19,
+    "2011": 40,
+    "2012": 36,
+    "2013": 45,
+    "2014": 77,
+    "2015": 56,
+    "2016": 75,
+    "2017": 86,
+    "2018": 81,
+    "2019": 77,
+    "2020": 82,
+    "2021": 72,
+    "2022": 64,
+    "2023": 40,
+    "2024": 36,
+    "2025": 33,
+    "2026": 38
+  },
+  "files": 1915,
+  "inspection_status": {
+    "no_eligible_cpp": 14,
+    "ready": 1000
+  },
+  "inventory_sha256": "882dd91343457b02b590d1dbec95483ddaef24a86f6c5e6702f11d2db312a2c4",
+  "new_discovery_queries": {
+    "language:C++ fork:false stars:30..7000 size:<50000 created:2009-01-01..2011-12-31": 7,
+    "language:C++ fork:false stars:30..7000 size:<50000 created:2012-01-01..2014-12-31": 35,
+    "language:C++ fork:false stars:30..7000 size:<50000 created:2015-01-01..2017-12-31": 34,
+    "language:C++ fork:false stars:30..7000 size:<50000 created:2018-01-01..2020-12-31": 23,
+    "language:C++ fork:false stars:30..7000 size:<50000 created:2021-01-01..2023-12-31": 15,
+    "language:C++ fork:false stars:30..7000 size:<50000 created:2024-01-01..2026-10-28": 31,
+    "language:C++ fork:false stars:30..7000 size:<50000 created:<2009-01-01": 24,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:audio": 41,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:compiler": 39,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:compression": 42,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:database": 36,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:embedded": 44,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:game-engine": 39,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:graphics": 41,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:macos": 34,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:networking": 42,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:qt": 38,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:robotics": 44,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:scientific-computing": 26,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:simulation": 41,
+    "language:C++ fork:false stars:30..7000 size:<50000 topic:windows": 24
+  },
+  "new_files": 1337,
+  "new_repositories": 700,
+  "repositories": 1000,
+  "runs": {
+    "baseline-permissive": {
+      "all": {
+        "exported_function_records": 79821,
+        "file_outcomes": {
+          "no_functions": 100,
+          "output": 1798,
+          "parse_error": 17
+        },
+        "files": 1915,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 1796,
+        "repositories": 1000,
+        "repository_output": 987,
+        "utf8_read_rejections": 17
+      },
+      "binary_sha256": "cf8a23d58b1da81d79394e7d70e740e4a6c00df2861515332c27b11dce8568b6",
+      "new": {
+        "exported_function_records": 53348,
+        "file_outcomes": {
+          "no_functions": 70,
+          "output": 1250,
+          "parse_error": 17
+        },
+        "files": 1337,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 1249,
+        "repositories": 700,
+        "repository_output": 688,
+        "utf8_read_rejections": 17
+      },
+      "summary_sha256": "4fde54634b9303bd4f2602051ead81eb3869c28198921ed934b2f64f797184e7"
+    },
+    "baseline-strict": {
+      "all": {
+        "exported_function_records": 2,
+        "file_outcomes": {
+          "no_functions": 7,
+          "output": 2,
+          "parse_error": 1906
+        },
+        "files": 1915,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 0,
+        "repositories": 1000,
+        "repository_output": 2,
+        "utf8_read_rejections": 17
+      },
+      "binary_sha256": "cf8a23d58b1da81d79394e7d70e740e4a6c00df2861515332c27b11dce8568b6",
+      "new": {
+        "exported_function_records": 1,
+        "file_outcomes": {
+          "no_functions": 3,
+          "output": 1,
+          "parse_error": 1333
+        },
+        "files": 1337,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 0,
+        "repositories": 700,
+        "repository_output": 1,
+        "utf8_read_rejections": 17
+      },
+      "summary_sha256": "13dc90d3c3ad57e065662944974146e48440c3355e1886dfc403563c9b2a1fe2"
+    },
+    "probe-permissive": {
+      "all": {
+        "exported_function_records": 80512,
+        "file_outcomes": {
+          "no_functions": 99,
+          "output": 1799,
+          "parse_error": 17
+        },
+        "files": 1915,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 1797,
+        "repositories": 1000,
+        "repository_output": 987,
+        "utf8_read_rejections": 17
+      },
+      "binary_sha256": "98d98a685ae5079ea01177f703c9d6b20e38f3714664a8868f5a3a5ae09e250a",
+      "new": {
+        "exported_function_records": 53569,
+        "file_outcomes": {
+          "no_functions": 69,
+          "output": 1251,
+          "parse_error": 17
+        },
+        "files": 1337,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 1250,
+        "repositories": 700,
+        "repository_output": 688,
+        "utf8_read_rejections": 17
+      },
+      "summary_sha256": "c8e384d10d66216e02acfcc9b23fae64573572b579c285238457af304b8a316c"
+    },
+    "probe-strict": {
+      "all": {
+        "exported_function_records": 2,
+        "file_outcomes": {
+          "no_functions": 7,
+          "output": 2,
+          "parse_error": 1906
+        },
+        "files": 1915,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 0,
+        "repositories": 1000,
+        "repository_output": 2,
+        "utf8_read_rejections": 17
+      },
+      "binary_sha256": "98d98a685ae5079ea01177f703c9d6b20e38f3714664a8868f5a3a5ae09e250a",
+      "new": {
+        "exported_function_records": 1,
+        "file_outcomes": {
+          "no_functions": 3,
+          "output": 1,
+          "parse_error": 1333
+        },
+        "files": 1337,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 0,
+        "repositories": 700,
+        "repository_output": 1,
+        "utf8_read_rejections": 17
+      },
+      "summary_sha256": "3da5b06c2ccf2cc6c1d4f7cd95fecf4cc44ae6a5913381536eaaa5d570b0dda7"
+    },
+    "standalone": {
+      "all": {
+        "exported_function_records": 86,
+        "file_outcomes": {
+          "compiler_rejected_or_missing_context": 1880,
+          "native_output": 1,
+          "native_parse_rejected": 21,
+          "no_functions": 13
+        },
+        "files": 1915,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 0,
+        "repositories": 1000,
+        "repository_output": 1,
+        "utf8_read_rejections": 0
+      },
+      "binary_sha256": "cf8a23d58b1da81d79394e7d70e740e4a6c00df2861515332c27b11dce8568b6",
+      "new": {
+        "exported_function_records": 86,
+        "file_outcomes": {
+          "compiler_rejected_or_missing_context": 1316,
+          "native_output": 1,
+          "native_parse_rejected": 13,
+          "no_functions": 7
+        },
+        "files": 1337,
+        "function_cfgs_with_invalid_edge_endpoints": 0,
+        "outputs_with_error_diagnostics": 0,
+        "repositories": 700,
+        "repository_output": 1,
+        "utf8_read_rejections": 0
+      },
+      "summary_sha256": "3101d5e894d16737dad4b8adee7de10ad379506af4e153d53be6e87c9a8f61d9"
+    }
+  },
+  "schema": "rust-joern-cpp-1000-raw-stress-v1",
+  "seed_manifest_sha256": "a2fadd1b16c7d0287e1d111419a6a2c2326eafbc7a8dc9db1fb5fb8cf8d76327",
+  "standalone_compiler_accepted_files": 35,
+  "standalone_reported_missing_files": 1862,
+  "truncated_tree_repositories": 0,
+  "unique_source_hashes": 1909
+}

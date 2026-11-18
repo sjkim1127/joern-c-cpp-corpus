@@ -7,7 +7,9 @@ import hashlib
 import json
 import itertools
 from pathlib import Path
+import shutil
 import subprocess
+import tempfile
 import urllib.parse
 import urllib.request
 
@@ -35,13 +37,15 @@ QUERIES = [
 
 
 def get(url, token):
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "joern-corpus-research",
+    }
+    if urllib.parse.urlsplit(url).hostname == "api.github.com":
+        headers["Authorization"] = "Bearer " + token
     req = urllib.request.Request(
         url,
-        headers={
-            "Authorization": "Bearer " + token,
-            "Accept": "application/vnd.github+json",
-            "User-Agent": "joern-corpus-research",
-        },
+        headers=headers,
     )
     with urllib.request.urlopen(req, timeout=45) as res:
         return res.read()
@@ -111,9 +115,11 @@ def inspect(repo, token, root):
                     "size": len(data),
                     "raw_url": raw,
                     "local_id": path.name,
-                    "selection": "largest"
-                    if p == largest["path"] and p != primary["path"]
-                    else "primary",
+                    "selection": (
+                        "largest"
+                        if p == largest["path"] and p != primary["path"]
+                        else "primary"
+                    ),
                 }
             )
         return {
@@ -125,6 +131,8 @@ def inspect(repo, token, root):
             "html_url": repo["html_url"],
             "created_at": repo["created_at"],
             "description": repo.get("description"),
+            "discovery_query": repo.get("discovery_query"),
+            "topics": repo.get("topics", []),
             "tree_truncated": tree.get("truncated", False),
             "files": files,
         }
@@ -132,16 +140,66 @@ def inspect(repo, token, root):
         return {"repository": name, "status": "error", "error": str(exc)}
 
 
+def seed_rows(manifest, output):
+    rows = json.loads(manifest.read_text())["results"]
+    seen = set()
+    ready = []
+    for row in rows:
+        if row["status"] != "ready":
+            continue
+        key = row["repository"].casefold()
+        if key in seen:
+            raise ValueError(f"duplicate seed repository {key}")
+        seen.add(key)
+        if not row["files"]:
+            raise ValueError(f"empty seed repository {key}")
+        for entry in row["files"]:
+            local_id = entry["local_id"]
+            if Path(local_id).name != local_id:
+                raise ValueError(f"invalid seed filename {local_id}")
+            source = manifest.parent / "inputs" / local_id
+            if hashlib.sha256(source.read_bytes()).hexdigest() != entry["sha256"]:
+                raise ValueError(f"seed hash mismatch: {source}")
+            dest = output / "inputs" / local_id
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, dest)
+        ready.append(row)
+    return ready
+
+
+def save_manifest(path, data):
+    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as stream:
+        json.dump(data, stream, indent=2)
+        stream.write("\n")
+        temporary = Path(stream.name)
+    temporary.replace(path)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", type=Path, required=True)
     ap.add_argument("--target", type=int, default=300)
     ap.add_argument("--workers", type=int, default=5)
+    ap.add_argument("--seed", type=Path, help="Preserve an existing fixed inventory")
+    ap.add_argument(
+        "--query-file", type=Path, help="JSON array of GitHub search queries"
+    )
     args = ap.parse_args()
+    if args.target < 1 or args.workers < 1:
+        ap.error("target and workers must be positive")
+    queries = json.loads(args.query_file.read_text()) if args.query_file else QUERIES
+    if (
+        not isinstance(queries, list)
+        or not queries
+        or not all(isinstance(q, str) and q for q in queries)
+    ):
+        ap.error("expected a non-empty array of queries")
+    if args.seed and args.seed.resolve().parent == args.output.resolve():
+        ap.error("the seed and expansion must use separate directories")
     token = subprocess.check_output(["gh", "auth", "token"], text=True).strip()
     args.output.mkdir(parents=True, exist_ok=True)
     buckets = []
-    for query in QUERIES:
+    for query in queries:
         url = (
             API
             + "/search/repositories?"
@@ -153,26 +211,32 @@ def main():
         bucket = []
         for r in data["items"]:
             license = r.get("license") or {}
-            if license.get("spdx_id") not in (None, "NOASSERTION", "NONE") and r[
-                "full_name"
-            ].lower() not in (
-                "google/snappy",
-                "ninja-build/ninja",
-                "google/double-conversion",
+            if (
+                not r.get("fork")
+                and license.get("spdx_id") not in (None, "NOASSERTION", "NONE")
+                and r["full_name"].lower()
+                not in (
+                    "google/snappy",
+                    "ninja-build/ninja",
+                    "google/double-conversion",
+                )
             ):
-                bucket.append(r)
+                bucket.append(r | {"discovery_query": query})
         buckets.append(bucket)
     repos = {}
     for group in itertools.zip_longest(*buckets):
         for repo in group:
             if repo is not None:
-                repos.setdefault(repo["full_name"], repo)
-    ordered = list(repos.values())
-    rows = []
+                repos.setdefault(repo["full_name"].casefold(), repo)
+    rows = seed_rows(args.seed, args.output) if args.seed else []
+    seed_names = {r["repository"].casefold() for r in rows}
     old_path = args.output / "manifest.json"
+    seed_sha = hashlib.sha256(args.seed.read_bytes()).hexdigest() if args.seed else None
     cached = {}
     if old_path.exists():
         previous = json.loads(old_path.read_text())
+        if previous.get("seed_manifest_sha256") != seed_sha:
+            ap.error("existing inventory uses a different seed manifest")
         for row in previous.get("results", []):
             if row.get("status") == "ready" and all(
                 not any(excluded in item["path"].lower() for excluded in EXCLUDE)
@@ -183,34 +247,46 @@ def main():
                 == item["sha256"]
                 for item in row["files"]
             ):
-                cached[row["repository"]] = row
+                cached[row["repository"].casefold()] = row
+    for name, row in cached.items():
+        if name not in seed_names:
+            rows.append(row)
+    admitted = len(rows)
+    if admitted > args.target:
+        ap.error("target is smaller than the existing ready inventory")
+    ordered = [
+        repo
+        for name, repo in repos.items()
+        if name not in seed_names and name not in cached
+    ]
 
-    def obtain(repo):
-        return cached.get(repo["full_name"]) or inspect(repo, token, args.output)
+    def checkpoint():
+        save_manifest(
+            old_path,
+            {
+                "schema": "joern-github-cpp-inventory-v1",
+                "queries": queries,
+                "target": args.target,
+                "seed_manifest_sha256": seed_sha,
+                "results": rows,
+            },
+        )
+
+    checkpoint()
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        # Bounded waves keep retries and failures explicit and allow collecting 300 successes.
-        for start in range(0, len(ordered), 20):
-            if sum(x["status"] == "ready" for x in rows) >= args.target:
-                break
-            batch = list(pool.map(obtain, ordered[start : start + 20]))
+        cursor = 0
+        while cursor < len(ordered) and admitted < args.target:
+            wave = ordered[cursor : cursor + min(20, args.target - admitted)]
+            batch = list(pool.map(lambda repo: inspect(repo, token, args.output), wave))
+            cursor += len(wave)
             rows.extend(batch)
+            admitted += sum(x["status"] == "ready" for x in batch)
             print(
-                f"inspected={len(rows)} ready={sum(x['status'] == 'ready' for x in rows)}",
+                f"inspected={len(rows)} ready={admitted}",
                 flush=True,
             )
-            (args.output / "manifest.json").write_text(
-                json.dumps(
-                    {
-                        "schema": "joern-github-cpp-inventory-v1",
-                        "queries": QUERIES,
-                        "target": args.target,
-                        "results": rows,
-                    },
-                    indent=2,
-                )
-                + "\n"
-            )
+            checkpoint()
     print(
         json.dumps(
             {
@@ -221,7 +297,8 @@ def main():
         ),
         flush=True,
     )
+    return 0 if admitted == args.target else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

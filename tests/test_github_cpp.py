@@ -27,6 +27,37 @@ line_view = load("project_line_view")
 
 
 class InventoryTests(unittest.TestCase):
+    def test_seed_copy_preserves_pinned_rows_and_checks_bytes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            seed = root / "previous"
+            (seed / "inputs").mkdir(parents=True)
+            source = seed / "inputs" / "body.cpp"
+            body = b"int f() { return 1; }\n"
+            source.write_bytes(body)
+            rows = [
+                {
+                    "repository": "sample/old",
+                    "commit": "f" * 40,
+                    "status": "ready",
+                    "files": [
+                        {
+                            "local_id": source.name,
+                            "sha256": hashlib.sha256(body).hexdigest(),
+                        }
+                    ],
+                },
+                {"repository": "sample/failed", "status": "error"},
+            ]
+            manifest = seed / "manifest.json"
+            manifest.write_text(json.dumps({"results": rows}))
+            output = root / "expanded"
+            self.assertEqual(discover.seed_rows(manifest, output), rows[:1])
+            self.assertEqual((output / "inputs" / source.name).read_bytes(), body)
+            source.write_bytes(b"changed")
+            with self.assertRaisesRegex(ValueError, "seed hash mismatch"):
+                discover.seed_rows(manifest, output)
+
     def test_cli_reads_inventory_inputs_for_nested_output(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
