@@ -65,6 +65,16 @@ function/CFG accounting and performance budgets. Its
 distinguish collected raw files from qualified compilation units. The design
 is not yet a complete executable benchmark.
 
+`scripts/prepare_benchmark_case.py` implements the first Clang build-cell
+pilot: it checks an exact clean checkout and unique compilation command,
+verifies the actual language mode and object architecture, preserves source
+ownership while preparing identical backend bytes, and inventories written
+function bodies through Clang's JSON AST. Primary-file and project-owned
+scopes are explicit; conflicting compiler identities are retained as
+exclusions. See the [two-project pilot](reports/BENCHMARK-PILOT-2026-11-18.md)
+for results and limits. This helper does not certify semantic CFG correctness
+or implement the full multi-platform benchmark runner.
+
 ## Controlled standard-mode experiment
 
 The following checks out exact upstream commits and uses the local Clang and local system headers. It is a reproducible *profile*, not a claim to reproduce the original corpus build. Ninja requires at least C++17 in its checked-in CMake configuration.

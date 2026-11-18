@@ -1,0 +1,206 @@
+{
+  "cases": [
+    {
+      "candidate_ast_record_count": 17,
+      "case": "asmjit-arena-cxx20",
+      "functions_sha256": "e35dd8d25323a8d031d9a92b0212d118d77621b2d2b8b3e00f28d0127ca43070",
+      "index_exclusions": 0,
+      "inventory_population": "compiler-observed explicit written bodies",
+      "inventory_scope": "primary",
+      "object_identity": {
+        "architecture": "aarch64",
+        "format": "Mach-O",
+        "machine": 16777228
+      },
+      "original": {
+        "body_cfg": 16,
+        "missing": 1
+      },
+      "original_parse_seconds_including_jvm_startup": 6.026677958900109,
+      "ownership": {
+        "primary": 17
+      },
+      "prepared_sha256": "a841f8694646c80c74b9d094870fb2f33ae172ee98fe0f127db7b2021650c1a6",
+      "profiles": {
+        "compat": {
+          "compatibility": {
+            "match": 16,
+            "reference_body_unavailable": 1
+          },
+          "error_diagnostics": 140,
+          "outcomes": {
+            "body_cfg": 16,
+            "missing": 1
+          },
+          "outcomes_by_ownership": {
+            "primary": {
+              "body_cfg": 16,
+              "missing": 1
+            }
+          },
+          "permissive_capture_seconds": 0.05272229202091694,
+          "semantic_correctness": null,
+          "strict_acceptance": "not_probed"
+        },
+        "default": {
+          "compatibility": {
+            "match": 16,
+            "reference_body_unavailable": 1
+          },
+          "error_diagnostics": 140,
+          "outcomes": {
+            "body_cfg": 16,
+            "missing": 1
+          },
+          "outcomes_by_ownership": {
+            "primary": {
+              "body_cfg": 16,
+              "missing": 1
+            }
+          },
+          "permissive_capture_seconds": 0.0464823751244694,
+          "semantic_correctness": null,
+          "strict_acceptance": "rejected"
+        }
+      },
+      "provenance_sha256": "385e09e3b6dd53642c49dc70e29b64620fe71cd2a8b8d2f4ea52a04aaf4291ea",
+      "requested": 17,
+      "retained_artifact_hashes": {
+        "functions.json": "e35dd8d25323a8d031d9a92b0212d118d77621b2d2b8b3e00f28d0127ca43070",
+        "original.ii": "2f1e4ddb28a5c40086f6cd3699286b3d1d497de96f4edc211a07e5a04d595bb9",
+        "prepared.cpp": "a841f8694646c80c74b9d094870fb2f33ae172ee98fe0f127db7b2021650c1a6",
+        "provenance.json": "385e09e3b6dd53642c49dc70e29b64620fe71cd2a8b8d2f4ea52a04aaf4291ea",
+        "target.o": "b6dad59845b1bc39f27d33f90de81f375bee2cc662a2e394d8a76dfa86f5d236"
+      },
+      "revision": "0464e1c8f1f43c861a0c73d4e59437fff255cdd9",
+      "source": "asmjit/axl/arena.cpp",
+      "standard": "c++20"
+    },
+    {
+      "candidate_ast_record_count": 1787,
+      "case": "gmock-all-cxx17",
+      "functions_sha256": "c91c963fed7ae85620afcd2546af221180f94dbfae71899b9703814a63c11c7f",
+      "index_exclusions": 24,
+      "inventory_population": "compiler-observed explicit written bodies",
+      "inventory_scope": "project",
+      "object_identity": {
+        "architecture": "aarch64",
+        "format": "Mach-O",
+        "machine": 16777228
+      },
+      "original": {
+        "body_cfg": 1031,
+        "degenerate": 225,
+        "missing": 347
+      },
+      "original_parse_seconds_including_jvm_startup": 7.9721874999813735,
+      "ownership": {
+        "project_header": 1508,
+        "project_implementation": 95
+      },
+      "prepared_sha256": "8b308e0a477f22a9b519da0981610f035ef9c64f10ed0736cd4a87fcf9c2f7e8",
+      "profiles": {
+        "compat": {
+          "compatibility": {
+            "degenerate": 1,
+            "match": 184,
+            "missing": 843,
+            "reference_body_unavailable": 572,
+            "topology_difference": 3
+          },
+          "error_diagnostics": 965,
+          "outcomes": {
+            "body_cfg": 204,
+            "degenerate": 57,
+            "missing": 1342
+          },
+          "outcomes_by_ownership": {
+            "project_header": {
+              "body_cfg": 204,
+              "degenerate": 57,
+              "missing": 1247
+            },
+            "project_implementation": {
+              "missing": 95
+            }
+          },
+          "permissive_capture_seconds": 0.6903054581489414,
+          "semantic_correctness": null,
+          "strict_acceptance": "not_probed"
+        },
+        "default": {
+          "compatibility": {
+            "degenerate": 1,
+            "match": 181,
+            "missing": 843,
+            "reference_body_unavailable": 572,
+            "topology_difference": 6
+          },
+          "error_diagnostics": 965,
+          "outcomes": {
+            "body_cfg": 204,
+            "degenerate": 57,
+            "missing": 1342
+          },
+          "outcomes_by_ownership": {
+            "project_header": {
+              "body_cfg": 204,
+              "degenerate": 57,
+              "missing": 1247
+            },
+            "project_implementation": {
+              "missing": 95
+            }
+          },
+          "permissive_capture_seconds": 0.720587250078097,
+          "semantic_correctness": null,
+          "strict_acceptance": "rejected"
+        }
+      },
+      "provenance_sha256": "5ae1645fb9ba757fbc607eb84e453fa519f0c47e06300ff46cd5d5b9f57929d7",
+      "requested": 1603,
+      "retained_artifact_hashes": {
+        "functions.json": "c91c963fed7ae85620afcd2546af221180f94dbfae71899b9703814a63c11c7f",
+        "original.ii": "6375050b9f9214cde5bffc1f431f224441bf4160b54c6df978dcf9c67df5a2d5",
+        "prepared.cpp": "8b308e0a477f22a9b519da0981610f035ef9c64f10ed0736cd4a87fcf9c2f7e8",
+        "provenance.json": "5ae1645fb9ba757fbc607eb84e453fa519f0c47e06300ff46cd5d5b9f57929d7",
+        "target.o": "023377c015083fa89a5dbe6a034d977c07062873d520ff4db60110457e598295"
+      },
+      "revision": "cd8e73f067129f8489e35c7b51c7a68552b289d2",
+      "source": "googlemock/src/gmock-all.cc",
+      "standard": "c++17"
+    }
+  ],
+  "compatibility_scope": "directed basic-block topology with entry/exit roles",
+  "compiler_ground_truth": "written definition inventory only; not CFG semantics",
+  "controlled_speed_ratio": null,
+  "defined_body_groups_before_inventory_exclusions": 1644,
+  "fresh_native_binary_build": false,
+  "host_contention_observed_during_work": true,
+  "host_profiles_tested": [
+    {
+      "architecture": "arm64",
+      "compiler": "Clang 22.1.8",
+      "os": "macos"
+    }
+  ],
+  "index_exclusions": 24,
+  "kind": "fresh two-TU diagnostic pilot, not a full benchmark release",
+  "native_binary": "Frozen d248d3934e4b93d4a32dab521e507ce83b019384 candidate, library SHA recorded in strict probe",
+  "requested_functions_after_inventory_exclusions": 1620,
+  "schema": "joern-new-project-cfg-pilot-v1",
+  "script_sha256": {
+    "capture.py": "686822de88a0d782c0040c26e85486e2fd36e9751660976dc5a7ba4dbc4435dc",
+    "compare.py": "65e4deac735001b6827513b9f095d276ebc7570c8a9101020be86fb55d9ecc7d",
+    "prepare_benchmark_case.py": "3a73a4d57c0aff93d73e83956da7f3e67a3198e3efd1e24cbc011a7f07dc8232"
+  },
+  "source_redistribution_qualified": false,
+  "standard_override_control": {
+    "actual_asmjit_mode": "c++20",
+    "incorrect_admission_rejected": true,
+    "requested_cmake_mode": "c++17"
+  },
+  "strict_probe_library_sha256": "0dea5d357047564928ed1dbfc2ac70a571396a113ccc6ef8c82819ae82dc56cc",
+  "strict_probe_scope": "default native options, full prepared TU, strict=True",
+  "timing_scope": "diagnostic calls; native in-process vs original JVM startup are not a controlled ratio"
+}
