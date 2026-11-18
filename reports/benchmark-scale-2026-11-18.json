@@ -1,0 +1,763 @@
+{
+  "backend_cli_sha256": "cf8a23d58b1da81d79394e7d70e740e4a6c00df2861515332c27b11dce8568b6",
+  "build_context": {
+    "archive_runs": [
+      {
+        "name": "benchmark-scale-2026-11-18",
+        "selection_outcomes": {
+          "build_unsuccessful": 4,
+          "no_eligible_inputs": 9,
+          "selected": 31
+        },
+        "selection_sha256": "b24bcff61d34814d7d266464894c407b5482406c0724d51add7d6dd5a7b0cc6d",
+        "validation_sha256": "a8ba20ed03f50a4adcb22e5f7f52c10b607aa964c9540d8bd3b7c80af5abf0c0"
+      },
+      {
+        "name": "benchmark-scale-supplement-2026-11-18",
+        "selection_outcomes": {
+          "no_eligible_inputs": 2,
+          "selected": 6
+        },
+        "selection_sha256": "ca0a412aeff9c33cc180d85dba2295e1d0c79c4901c83482a659595795953493",
+        "validation_sha256": "129d33ac4fb61b809ace1eeaac89330999127e8686b890e2592ef05872957d93"
+      }
+    ],
+    "compiler_rejections": [
+      {
+        "attempts": [
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++17"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++20"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++23"
+          },
+          {
+            "returncodes": [
+              1
+            ],
+            "standard": "gnu++14"
+          },
+          {
+            "returncodes": [
+              1
+            ],
+            "standard": "gnu++11"
+          },
+          {
+            "returncodes": [
+              1
+            ],
+            "standard": "gnu++98"
+          }
+        ],
+        "functions": 25,
+        "id": "gperftools-1",
+        "project": "gperftools"
+      },
+      {
+        "attempts": [
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++17"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++20"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++23"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++14"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++11"
+          },
+          {
+            "returncodes": [
+              1
+            ],
+            "standard": "gnu++98"
+          }
+        ],
+        "functions": 2,
+        "id": "harfbuzz-0",
+        "project": "harfbuzz"
+      },
+      {
+        "attempts": [
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++17"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++20"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++23"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++14"
+          },
+          {
+            "returncodes": [
+              0,
+              1
+            ],
+            "standard": "gnu++11"
+          },
+          {
+            "returncodes": [
+              1
+            ],
+            "standard": "gnu++98"
+          }
+        ],
+        "functions": 2,
+        "id": "harfbuzz-1",
+        "project": "harfbuzz"
+      }
+    ],
+    "groups": {
+      "all": {
+        "native_capture": {
+          "captured": 67
+        },
+        "original": {
+          "body_cfg": 1005,
+          "degenerate": 44,
+          "missing": 426
+        },
+        "original_capture": {
+          "captured": 55,
+          "empty_export": 12
+        },
+        "profiles": {
+          "compat": {
+            "common_body_graphs": 928,
+            "reference_comparison": {
+              "degenerate": 1,
+              "match": 910,
+              "missing": 76,
+              "reference_body_unavailable": 470,
+              "topology_difference": 18
+            },
+            "rust": {
+              "body_cfg": 1273,
+              "degenerate": 41,
+              "missing": 161
+            }
+          },
+          "default": {
+            "common_body_graphs": 928,
+            "reference_comparison": {
+              "degenerate": 1,
+              "match": 874,
+              "missing": 76,
+              "reference_body_unavailable": 470,
+              "topology_difference": 54
+            },
+            "rust": {
+              "body_cfg": 1273,
+              "degenerate": 41,
+              "missing": 161
+            }
+          }
+        },
+        "projects": 36,
+        "requested": 1475,
+        "strict": {
+          "rejected": 67
+        },
+        "tus": 67
+      },
+      "gnu++17": {
+        "native_capture": {
+          "captured": 55
+        },
+        "original": {
+          "body_cfg": 1005,
+          "degenerate": 44,
+          "missing": 123
+        },
+        "original_capture": {
+          "captured": 55
+        },
+        "profiles": {
+          "compat": {
+            "common_body_graphs": 928,
+            "reference_comparison": {
+              "degenerate": 1,
+              "match": 910,
+              "missing": 76,
+              "reference_body_unavailable": 167,
+              "topology_difference": 18
+            },
+            "rust": {
+              "body_cfg": 974,
+              "degenerate": 40,
+              "missing": 158
+            }
+          },
+          "default": {
+            "common_body_graphs": 928,
+            "reference_comparison": {
+              "degenerate": 1,
+              "match": 874,
+              "missing": 76,
+              "reference_body_unavailable": 167,
+              "topology_difference": 54
+            },
+            "rust": {
+              "body_cfg": 974,
+              "degenerate": 40,
+              "missing": 158
+            }
+          }
+        },
+        "projects": 30,
+        "requested": 1172,
+        "strict": {
+          "rejected": 55
+        },
+        "tus": 55
+      },
+      "gnu++20": {
+        "native_capture": {
+          "captured": 12
+        },
+        "original": {
+          "missing": 303
+        },
+        "original_capture": {
+          "empty_export": 12
+        },
+        "profiles": {
+          "compat": {
+            "common_body_graphs": 0,
+            "reference_comparison": {
+              "reference_body_unavailable": 303
+            },
+            "rust": {
+              "body_cfg": 299,
+              "degenerate": 1,
+              "missing": 3
+            }
+          },
+          "default": {
+            "common_body_graphs": 0,
+            "reference_comparison": {
+              "reference_body_unavailable": 303
+            },
+            "rust": {
+              "body_cfg": 299,
+              "degenerate": 1,
+              "missing": 3
+            }
+          }
+        },
+        "projects": 6,
+        "requested": 303,
+        "strict": {
+          "rejected": 12
+        },
+        "tus": 12
+      }
+    },
+    "local_full_report_sha256": "4f71d34c2d145df518a424fd7075421cf902693645d8714a27600b936bde2fbb",
+    "local_function_rows_sha256": "9ee408b32af1dc1306571b0b09b67b785e64eb944bf7332cd5fd536baca07697",
+    "projects": [
+      {
+        "original_body_cfg": 10,
+        "project": "Catch2",
+        "repository": "catchorg/Catch2",
+        "requested": 10,
+        "revision": "02f8b5593a15cdec8558256e6f40a0c7fb5862d6",
+        "rust_body_cfg": 10,
+        "topology_matches_compat": 10,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "Clipboard",
+        "repository": "Slackadays/Clipboard",
+        "requested": 3,
+        "revision": "da607a6736605fe1e1b2aff629b913f4f342d5d8",
+        "rust_body_cfg": 3,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 7,
+        "project": "EASTL",
+        "repository": "electronicarts/EASTL",
+        "requested": 7,
+        "revision": "e323f67e5d93fdadcd44f7998069d804697b1945",
+        "rust_body_cfg": 7,
+        "topology_matches_compat": 7,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 7,
+        "project": "GSL",
+        "repository": "microsoft/GSL",
+        "requested": 9,
+        "revision": "a16852b79452bdfa217381c6a5eab0b2975e2076",
+        "rust_body_cfg": 0,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 68,
+        "project": "LightGBM",
+        "repository": "lightgbm-org/LightGBM",
+        "requested": 69,
+        "revision": "6d386edf77a363750669ba622b133ca4e794e353",
+        "rust_body_cfg": 68,
+        "topology_matches_compat": 62,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 9,
+        "project": "OpenCC",
+        "repository": "BYVoid/OpenCC",
+        "requested": 9,
+        "revision": "c363a7ba51d487950982bd8a589211ffbfd95ba1",
+        "rust_body_cfg": 9,
+        "topology_matches_compat": 7,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 17,
+        "project": "PowerInfer",
+        "repository": "Tiiny-AI/PowerInfer",
+        "requested": 17,
+        "revision": "8bd56d69906c9d2dba4d3bf6899763401e01a9a4",
+        "rust_body_cfg": 17,
+        "topology_matches_compat": 17,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 18,
+        "project": "abseil-cpp",
+        "repository": "abseil/abseil-cpp",
+        "requested": 20,
+        "revision": "15ea57c38713eff81d29d2d780b6a56f241a16a0",
+        "rust_body_cfg": 18,
+        "topology_matches_compat": 18,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 2,
+        "project": "asio",
+        "repository": "chriskohlhoff/asio",
+        "requested": 2,
+        "revision": "8806a6803cde7054c3049d3666d3ec36786568c5",
+        "rust_body_cfg": 2,
+        "topology_matches_compat": 1,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 8,
+        "project": "cpr",
+        "repository": "libcpr/cpr",
+        "requested": 12,
+        "revision": "9adb78f725a8979f3d934b52fc612e4ce7d10cb9",
+        "rust_body_cfg": 5,
+        "topology_matches_compat": 5,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 8,
+        "project": "dlib",
+        "repository": "davisking/dlib",
+        "requested": 9,
+        "revision": "f28ef5001187a8742bd22ec1044e6179c00aeff2",
+        "rust_body_cfg": 8,
+        "topology_matches_compat": 8,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 1,
+        "project": "doctest",
+        "repository": "doctest/doctest",
+        "requested": 1,
+        "revision": "d44d4f6e66232d716af82f00a063759e9d0e50d6",
+        "rust_body_cfg": 1,
+        "topology_matches_compat": 1,
+        "tus": 1
+      },
+      {
+        "original_body_cfg": 60,
+        "project": "flatbuffers",
+        "repository": "google/flatbuffers",
+        "requested": 61,
+        "revision": "b8431fbcd7a5c71817f314e18b332c0648554efa",
+        "rust_body_cfg": 0,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 3,
+        "project": "fmt",
+        "repository": "fmtlib/fmt",
+        "requested": 37,
+        "revision": "5fc5c910c03b82cd92c29feb623b9112063138bf",
+        "rust_body_cfg": 24,
+        "topology_matches_compat": 3,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 124,
+        "project": "ggml",
+        "repository": "ggml-org/ggml",
+        "requested": 172,
+        "revision": "456172ec733a135778adcd32d00e576a58232e45",
+        "rust_body_cfg": 120,
+        "topology_matches_compat": 120,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 16,
+        "project": "git-crypt",
+        "repository": "AGWA/git-crypt",
+        "requested": 16,
+        "revision": "8c7a90ff38fc9daf41e5f6ccb3f105ee82782231",
+        "rust_body_cfg": 16,
+        "topology_matches_compat": 16,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 1,
+        "project": "googletest",
+        "repository": "google/googletest",
+        "requested": 1,
+        "revision": "f840327b0f76408eafde2440af3b2f0a70662ea6",
+        "rust_body_cfg": 0,
+        "topology_matches_compat": 0,
+        "tus": 1
+      },
+      {
+        "original_body_cfg": 11,
+        "project": "gperftools",
+        "repository": "gperftools/gperftools",
+        "requested": 14,
+        "revision": "0cc73303a93b27f46df9b93ee676937514e447ad",
+        "rust_body_cfg": 11,
+        "topology_matches_compat": 11,
+        "tus": 1
+      },
+      {
+        "original_body_cfg": 34,
+        "project": "highway",
+        "repository": "google/highway",
+        "requested": 35,
+        "revision": "993f67ca6d5e1d9d653f44976bf09afaf522afc5",
+        "rust_body_cfg": 34,
+        "topology_matches_compat": 33,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 214,
+        "project": "jsoncpp",
+        "repository": "open-source-parsers/jsoncpp",
+        "requested": 238,
+        "revision": "3347a4b86bb914cb565f0cbda19c06e109513300",
+        "rust_body_cfg": 215,
+        "topology_matches_compat": 208,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "kakoune",
+        "repository": "mawww/kakoune",
+        "requested": 8,
+        "revision": "f16dba30002c4a18a247968ad4d12043cce018a8",
+        "rust_body_cfg": 7,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 10,
+        "project": "leveldb",
+        "repository": "google/leveldb",
+        "requested": 10,
+        "revision": "7ee830d02b623e8ffe0b95d59a74db1e58da04c5",
+        "rust_body_cfg": 10,
+        "topology_matches_compat": 10,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 14,
+        "project": "libzmq",
+        "repository": "zeromq/libzmq",
+        "requested": 15,
+        "revision": "46493370217ac135246617fa2f6ac819d8b61bfc",
+        "rust_body_cfg": 14,
+        "topology_matches_compat": 13,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 35,
+        "project": "luau",
+        "repository": "luau-lang/luau",
+        "requested": 36,
+        "revision": "7d5f73364fdbbaa984fa545071630eba73cfea98",
+        "rust_body_cfg": 35,
+        "topology_matches_compat": 35,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "magic_enum",
+        "repository": "Neargye/magic_enum",
+        "requested": 14,
+        "revision": "adf50a7880514138442b6ab4f31e783f42d3243a",
+        "rust_body_cfg": 13,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 20,
+        "project": "ninja",
+        "repository": "ninja-build/ninja",
+        "requested": 22,
+        "revision": "e4a128055f7698522da6de2821ffe0761623f298",
+        "rust_body_cfg": 20,
+        "topology_matches_compat": 20,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 9,
+        "project": "oatpp",
+        "repository": "oatpp/oatpp",
+        "requested": 10,
+        "revision": "f83d648fd82dc222ef88aabbafb68efbd7d7bf50",
+        "rust_body_cfg": 9,
+        "topology_matches_compat": 9,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 7,
+        "project": "snappy",
+        "repository": "google/snappy",
+        "requested": 7,
+        "revision": "2a6c78c781cb76ad191795449cb2267f33138150",
+        "rust_body_cfg": 7,
+        "topology_matches_compat": 7,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "spdlog",
+        "repository": "gabime/spdlog",
+        "requested": 25,
+        "revision": "57cb5fb7a8ff30079751728234623230535a5c92",
+        "rust_body_cfg": 19,
+        "topology_matches_compat": 0,
+        "tus": 1
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "tinyrenderer",
+        "repository": "ssloy/tinyrenderer",
+        "requested": 12,
+        "revision": "97eb7a480e762285899a93c5d21e70a79e60782e",
+        "rust_body_cfg": 12,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 194,
+        "project": "tinyxml2",
+        "repository": "leethomason/tinyxml2",
+        "requested": 202,
+        "revision": "8224e427b655b83dae5e2298f1e6919523a78737",
+        "rust_body_cfg": 194,
+        "topology_matches_compat": 192,
+        "tus": 1
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "wabt",
+        "repository": "WebAssembly/wabt",
+        "requested": 244,
+        "revision": "e197d0b7bd3fe426f5963ae540f4426a1d49e89f",
+        "rust_body_cfg": 242,
+        "topology_matches_compat": 0,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 61,
+        "project": "whisper.cpp",
+        "repository": "ggml-org/whisper.cpp",
+        "requested": 61,
+        "revision": "da54572229bcf64ba367d96c7ef15770376c4280",
+        "rust_body_cfg": 61,
+        "topology_matches_compat": 61,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 30,
+        "project": "xgboost",
+        "repository": "dmlc/xgboost",
+        "requested": 38,
+        "revision": "3a48eba84d72de5f6f8933a2521a07e818958a97",
+        "rust_body_cfg": 33,
+        "topology_matches_compat": 29,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 7,
+        "project": "yaml-cpp",
+        "repository": "jbeder/yaml-cpp",
+        "requested": 7,
+        "revision": "8eb618e889c003457d73f7c54777603835677ff4",
+        "rust_body_cfg": 7,
+        "topology_matches_compat": 7,
+        "tus": 2
+      },
+      {
+        "original_body_cfg": 0,
+        "project": "yoga",
+        "repository": "react/yoga",
+        "requested": 22,
+        "revision": "f42d532527974a4504e644f6836946ad108d4133",
+        "rust_body_cfg": 22,
+        "topology_matches_compat": 0,
+        "tus": 2
+      }
+    ],
+    "timings": {
+      "original_jvm": {
+        "p50_seconds": 22.88905516709201,
+        "p95_seconds": 52.68102300004102,
+        "samples": 67
+      },
+      "rust_compat": {
+        "p50_seconds": 0.5901736670639366,
+        "p95_seconds": 6.005672333063558,
+        "samples": 67
+      },
+      "rust_default": {
+        "p50_seconds": 0.6696315419394523,
+        "p95_seconds": 5.415708207990974,
+        "samples": 67
+      }
+    }
+  },
+  "controlled_speed_ratio": null,
+  "date": "2026-11-18",
+  "distinct_repository_names_across_tracks": 311,
+  "gcc_image": "sha256:bce4ff0ba827ec87bdaeb1d68fa9807acf87bdec9a9228684bc21e75baf2ba99",
+  "raw_recovery": {
+    "files": 578,
+    "inventory_sha256": "a2fadd1b16c7d0287e1d111419a6a2c2326eafbc7a8dc9db1fb5fb8cf8d76327",
+    "project_creation_range": [
+      "2008",
+      "2026"
+    ],
+    "projects": 300,
+    "results": {
+      "raw-permissive": {
+        "cli_elapsed": {
+          "p50_seconds": 0.009584833518601954,
+          "p95_seconds": 0.04244754207320511,
+          "samples": 578
+        },
+        "exported_function_records": 26473,
+        "file_outcomes": {
+          "no_functions": 30,
+          "output": 548
+        },
+        "invalid_graph_edge_references": 0,
+        "projects_with_output": 299,
+        "summary_sha256": "41c4b2ce3f808250d80c969bd62a62730c68e119c3eece7b01c28cb8c71d21c5"
+      },
+      "raw-strict": {
+        "cli_elapsed": {
+          "p50_seconds": 0.004668083041906357,
+          "p95_seconds": 0.008561959024518728,
+          "samples": 5
+        },
+        "exported_function_records": 1,
+        "file_outcomes": {
+          "no_functions": 4,
+          "output": 1,
+          "parse_error": 573
+        },
+        "invalid_graph_edge_references": 0,
+        "projects_with_output": 1,
+        "summary_sha256": "c0f875f43cbcb5015394e622a385c01be479d93e8592e8c232a6913e13227234"
+      },
+      "standalone": {
+        "cli_elapsed": null,
+        "compiler_diagnostics_with_missing_file": 556,
+        "compiler_validated_source_projects": 12,
+        "exported_function_records": 0,
+        "file_outcomes": {
+          "compiler_rejected_or_missing_context": 564,
+          "native_parse_rejected": 8,
+          "no_functions": 6
+        },
+        "invalid_graph_edge_references": 0,
+        "projects_with_output": 0,
+        "summary_sha256": "2880842a3245884b2958981d8ba42486e8b2e031513521175c7dc0ed96a6d873"
+      }
+    }
+  },
+  "reference": "PyJoern 4.0.150.4 / Joern v4.0.150",
+  "runtime_scope": "loaded Rust API and original JVM startup timings under concurrent load, no controlled speed ratio",
+  "rust_revision": "d248d3934e4b93d4a32dab521e507ce83b019384",
+  "schema": "joern-300-project-run-v1",
+  "semantic_cfg_correctness": null,
+  "topology_comparator": "existing entry/exit-colored directed isomorphism via igraph 1.0.0 when nonidentical"
+}
