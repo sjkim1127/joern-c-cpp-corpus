@@ -150,6 +150,9 @@ raw files and a separate compiler-checked comparison of 67 prepared TUs from
 36 repositories. Its report gives the denominator and evidence for each result.
 The [1,000-repository run](reports/BENCHMARK-1000-2026-11-18.md) compares the
 baseline and local C++ parser probe on the expanded raw inventory.
+The [compiler-indexed follow-up](reports/BENCHMARK-BUILD-CONTEXT-2026-11-19.md)
+adds actual build context for three projects from that inventory and records
+the comparison behind the Rust-Joern lexer PR.
 `scripts/qualify_github_cpp.py --all-files` instead attempts a standalone Clang
 GNU C++17 syntax check, preprocessing and strict CFG extraction. This is a new
 experimental configuration, not each project's original build; missing headers,
